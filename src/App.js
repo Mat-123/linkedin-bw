@@ -1,7 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Recommended from "./components/Recommended";
 import Analyses from "./components/Analyses";
-import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
