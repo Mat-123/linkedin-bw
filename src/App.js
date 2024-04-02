@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyNav";
+import HeroComponent from "./components/MyProfile/HeroComponent";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Container fluid="xl">
         <Row>
           <Col xs="12" md="7" lg="8">
+            <HeroComponent />
             {/* profilo */}
             {/* Consigliato */}
           </Col>
