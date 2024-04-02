@@ -32,7 +32,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -44,7 +46,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -56,7 +60,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -68,7 +74,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -80,7 +88,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -92,7 +102,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -104,7 +116,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
@@ -116,7 +130,9 @@ function MiniCardCarousel() {
                 Gli utenti che includono almeno una posizione lavorativa ricevono fino a 3,5 volte più visualizzazioni
                 del profilo.
               </Card.Text>
-              <Button class="btn btn-outline-dark rounded-pill">Go somewhere</Button>
+              <Button variant="outline-secondary" className="rounded-pill">
+                Go somewhere
+              </Button>
             </Card.Body>
           </Card>
         </div>
