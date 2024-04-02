@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <MyNav />
-      <Container fluid="xl">
+      <Container fluid="xl" className="mt-4">
         <Row>
           <Col xs="12" md="7" lg="8">
             {/* profilo */}

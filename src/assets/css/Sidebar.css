@@ -2,6 +2,7 @@ h3,
 p,
 h4 {
   color: #191919;
+  margin-bottom: 0;
 }
 
 .sidebar-gray-text {
@@ -22,15 +23,15 @@ h4 {
   width: 130px;
   background-color: white;
   color: #5e5e5e;
-  border: 1px solid #5e5e5e;
   border-radius: 25px;
+  border: none;
 }
 
 .sidebar-btn:hover {
   background-color: #ebebeb;
   color: #404040;
   cursor: pointer;
-  border: 1px solid #232323;
+
   border-radius: 25px;
 }
 
@@ -38,18 +39,51 @@ h4 {
   color: #5e5e5e;
 }
 
+
+
 .sidebar-mostra-tutto:hover {
   cursor: pointer;
-  background-color: #ebebeb;
+  background-color: #737373;
+}
+
+.sidebar-img {
+  border-radius: 10px;
 }
 
 .sidebar-first-section {
-  justify-content: space-between;
-  padding-right: 20px;
+  padding: 15px;
   background-color: white;
+
 }
 
 .sidebar-second-section {
   background-color: white;
-  padding-right: 20px;
+  padding: 15px;
+
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 17px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+.line {
+  background-color: #404040;
+  height: 1px;
+}
+
+.sidebar-main {
+  background-color: white;
+}
+
+.second-section {
+  background-color: white;
+  border-radius: 10px;
 }

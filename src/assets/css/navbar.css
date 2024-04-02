@@ -67,8 +67,14 @@ header {
 
 #dropdown-menu-align-end {
     border: none;
-    background: none;
+    background: white;
     color: gray;
     font-size: 12px;
     padding: 0;
+    overflow: hidden;
+
+}
+
+.inner-dropdown {
+    overflow: hidden;
 }
