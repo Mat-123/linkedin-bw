@@ -1,9 +1,15 @@
+.whiteBck{
+    background-color: white;
+    border-radius: 1em;
+}
+
 .camera {
-  top: 3em;
-  right: 3em;
-  padding: 1em;
+  top: 2em;
+  right: 2em;
+  padding-inline: 0.4em;
   background-color: white;
   border-radius: 50%;
+  padding-block-end: 0.3em;
 }
 .profile {
   border-radius: 50%;
@@ -15,14 +21,19 @@
 .otherBorder {
   border: 4px solid white;
   border-radius: 50%;
-  top: 9em;
+  top: 3.5em;
+}
+.my-4Personal{
+    margin-bottom: -1.5rem !important;
 }
 .imgProfile {
   /* padding: 3em; */
   height: 100%;
   width: 100%;
 }
-
+.margin{
+    margin-block-end: 0;
+}
 .pen {
   margin-left: auto;
 }
@@ -32,8 +43,11 @@
   border-radius: 3em;
   color: #0967c2;
   padding-inline: 1.7em;
-  height: 2.5em;
+  height: 2em;
   /* padding-block: 0.5em; */
+}
+.verified{
+    margin-right: 0.5em;
 }
 .fs-3 {
   margin: 0;
