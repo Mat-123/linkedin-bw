@@ -1,0 +1,74 @@
+header {
+    position: sticky;
+    top: 0;
+    height: 53px;
+    background-color: white;
+}
+
+.navbar {
+    height: 52px;
+    text-align: center;
+    align-content: center;
+}
+
+.nav_left {
+    display: flex;
+    align-items: center;
+
+}
+
+.nav_search {
+    background-color: #EDF3F8;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    height: 35px;
+    margin-left: 5px
+}
+
+.nav_search input {
+    border: none;
+    outline: none;
+    background: none;
+
+}
+
+.utente {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nav_right svg {
+    fill: rgb(57, 57, 57)
+}
+
+.nav_right p {
+    color: gray;
+    margin: 0;
+}
+
+.nav_right>div {
+    width: 80px;
+    font-size: 13px;
+}
+
+.svg_div {
+    width: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.profile_pic {
+    display: flex;
+    justify-content: center;
+}
+
+#dropdown-menu-align-end {
+    border: none;
+    background: none;
+    color: gray;
+    font-size: 12px;
+    padding: 0;
+}
