@@ -1,19 +1,44 @@
+h3,
+p,
+h4 {
+  color: #191919;
+}
+
+.sidebar-gray-text {
+  color: #666666;
+}
+
 .sidebar-circle-image {
   border-radius: 50%;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
 }
 
 .sidebar-text-profile {
-  line-height: 0.8;
+  line-height: 0.4;
 }
 
 .sidebar-btn {
+  width: 130px;
   background-color: white;
   color: #5e5e5e;
   border: 1px solid #5e5e5e;
+  border-radius: 25px;
+}
+
+.sidebar-btn:hover {
+  background-color: #ebebeb;
+  color: #404040;
+  cursor: pointer;
+  border: 1px solid #232323;
+  border-radius: 25px;
 }
 
 .sidebar-icon {
   color: #5e5e5e;
+}
+
+.sidebar-mostra-tutto:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
 }
