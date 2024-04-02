@@ -44,12 +44,14 @@ h4 {
 }
 
 .sidebar-first-section {
-  justify-content: space-between;
   padding-right: 20px;
   background-color: white;
 }
 
 .sidebar-second-section {
   background-color: white;
+}
+
+.sidebar-contact {
   padding-right: 20px;
 }
