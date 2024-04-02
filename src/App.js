@@ -9,11 +9,11 @@ function App() {
       <MyNav />
       <Container fluid="xl">
         <Row>
-          <Col xs="12" md="7" lg="9">
+          <Col xs="12" md="7" lg="8">
             {/* profilo */}
             {/* Consigliato */}
           </Col>
-          <Col xs="12" md="5" lg="3">
+          <Col xs="12" md="5" lg="4">
             <Sidebar />
           </Col>
           {/* Footer */}
