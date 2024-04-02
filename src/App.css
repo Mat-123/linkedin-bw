@@ -1,4 +1,17 @@
 .App {
-  background-color: #F4F2EE;
+  background-color: #f4f2ee;
   height: 100%;
+}
+.customCard {
+  background: #f8fafd !important;
+}
+
+.prev,
+.next {
+  color: #717171 !important;
+}
+
+.prev:hover,
+.next:hover {
+  color: #1a1a1a !important;
 }

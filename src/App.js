@@ -1,4 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
+import Recommended from "./components/Recommended";
+import Analyses from "./components/Analyses";
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyNav";
@@ -10,8 +16,8 @@ function App() {
       <Container fluid="xl">
         <Row>
           <Col xs="12" md="7" lg="8">
-            {/* profilo */}
-            {/* Consigliato */}
+            <Recommended />
+            <Analyses />
           </Col>
           <Col xs="12" md="5" lg="4">
             <Sidebar />
