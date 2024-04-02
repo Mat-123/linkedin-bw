@@ -1,0 +1,19 @@
+.sidebar-circle-image {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+
+.sidebar-text-profile {
+  line-height: 0.8;
+}
+
+.sidebar-btn {
+  background-color: white;
+  color: #5e5e5e;
+  border: 1px solid #5e5e5e;
+}
+
+.sidebar-icon {
+  color: #5e5e5e;
+}
