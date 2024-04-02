@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyNav";
+import HeroComponent from "./components/MyProfile/HeroComponent";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Container fluid="xl">
         <Row>
           <Col xs="12" md="7" lg="8">
+            <HeroComponent />
             <Recommended />
             <Analyses />
           </Col>
