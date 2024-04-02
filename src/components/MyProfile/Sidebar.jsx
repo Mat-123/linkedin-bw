@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import "../MyProfile/Sidebar.css";
+import "../../assets/css/Sidebar.css";
 import badge from "../../assets/img/sidebar-hiring-badge.png";
 
 const Sidebar = () => {
