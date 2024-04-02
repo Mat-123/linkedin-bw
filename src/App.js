@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyNav";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
             {/* Consigliato */}
           </Col>
           <Col xs="12" md="5" lg="3">
-            {/* sidebar */}
+            <Sidebar />
           </Col>
           {/* Footer */}
         </Row>
