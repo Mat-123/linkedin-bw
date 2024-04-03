@@ -37,8 +37,13 @@ h3 {
     margin-top: 10px;
     font-size: 15px;
     font-weight: 500;
+    color: gray;
 }
 
 .btn-hidden-area:hover {
     background: rgb(178, 178, 178);
+}
+
+.hidden-area {
+    display: none;
 }

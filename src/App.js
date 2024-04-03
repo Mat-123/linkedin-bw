@@ -18,24 +18,26 @@ function App() {
       <BrowserRouter>
         <MyNav />
         <Container fluid="xl" className="mt-4">
-          <Row>
-            <Routes>
-              <Route
-                path="/home"
-                element={
-                  <>
+          <Routes>
+            <Route
+              path="/home"
+              element={
+                <>
+                  <Row>
                     <Col xs="12" md="5" lg="2">
                       <LeftSidebar />
                     </Col>
                     <Col xs="12" md="7"></Col>
                     <Col className="d-xs-none" lg="3"></Col>
-                  </>
-                }
-              />
-              <Route
-                path="/me"
-                element={
-                  <>
+                  </Row>
+                </>
+              }
+            />
+            <Route
+              path="/me"
+              element={
+                <>
+                  <Row>
                     <Col xs="12" md="7" lg="8">
                       <HeroComponent />
                       <Recommended />
@@ -44,12 +46,12 @@ function App() {
                     <Col xs="12" md="5" lg="4">
                       <Sidebar />
                     </Col>
-                  </>
-                }
-              />
-            </Routes>
-            <FooterComponent />
-          </Row>
+                  </Row>
+                  <FooterComponent />
+                </>
+              }
+            />
+          </Routes>
         </Container>
       </BrowserRouter>
     </div>
