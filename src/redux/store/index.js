@@ -1,39 +1,35 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import fetchPersonalReduce from '../reducers/fetchPersonalReduce'
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import fetchPersonalReduce from "../reducers/fetchPersonalReduce";
 
-// 
+//
 // configureStore.js
 
-import { createStore } from 'redux'
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-
-import rootReducer from './reducers'
+// import { createStore } from 'redux'
+import persistReducer from "redux-persist/es/persistReducer";
+import persistStore from "redux-persist/es/persistStore";
+import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
 const persistConfig = {
-  key: 'root',
-  storage,
-}
+  key: "root",
+  storage: storage,
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const unifiedReducer = combineReducers({
+  user: fetchPersonalReduce, // ricostruisce la fetta user
+  // cart: cartReducer, // ricostruisce la fetta cart
+  // book: bookReducer, // ricostruisce la fetta book
+});
 
-export default () => {
-  let store = createStore(persistedReducer)
-  let persistor = persistStore(store)
-  return { store, persistor }
-}
-// 
+const persistedReducer = persistReducer(persistConfig, unifiedReducer);
 
-// const unifiedReducer = combineReducers({
-//     user: fetchPersonalReduce, // ricostruisce la fetta user
-//     // cart: cartReducer, // ricostruisce la fetta cart
-//     // book: bookReducer, // ricostruisce la fetta book
-//   })
+export const store = configureStore({
+  reducer: persistedReducer, // questo reducer risultante è la "somma" di tutte le slices
+});
 
-//   const store = configureStore({
-//     reducer: unifiedReducer, // questo reducer risultante è la "somma" di tutte le slices
-//   })
-  
-//   export default store
+export const persiStore = persistStore(store);
 
-  // 
+//   export default () => {
+//   let store = createStore(persistedReducer);
+//   let persistor = persistStore(store);
+//   return { store, persistor };
+// };
