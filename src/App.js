@@ -62,6 +62,24 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="/utente/:utente"
+              element={
+                <>
+                  <Row>
+                    <Col xs="12" md="7" lg="8">
+                      <HeroComponent />
+                      <Recommended />
+                      <Analyses />
+                    </Col>
+                    <Col xs="12" md="5" lg="4">
+                      <Sidebar />
+                    </Col>
+                  </Row>
+                  <FooterComponent />
+                </>
+              }
+            />
           </Routes>
         </Container>
       </BrowserRouter>
