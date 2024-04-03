@@ -75,7 +75,11 @@ const ModifyProfile = ({ show, handleClose }) => {
           </Form.Group>
           <Form.Group controlId="formArea">
             <Form.Label>Area</Form.Label>
-            <Form.Control type="text" name="area" value={formData.area} onChange={handleChange} required />
+            <Form.Control type="text" name="area" value={formData.area} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group controlId="formImg">
+            <Form.Label>Immagine</Form.Label>
+            <Form.Control type="text" name="image" value={formData.image} onChange={handleChange} required />
           </Form.Group>
           <div className="mt-2 d-flex justify-content-between">
             <Button variant="secondary" onClick={handleClose}>
