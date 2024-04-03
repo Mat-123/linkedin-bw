@@ -1,33 +1,27 @@
-import sfondo from "../MyProfile/hero-section/uno.svg";
-import verifica from "./hero-section/icona-verifica.svg";
-import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
-import ModifyProfile from "../ModifyProfile";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfile } from "../../redux/actions";
-import camera from "../MyProfile/hero-section/camera-fill.svg";
-
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
-import imgProfile from "./hero-section/due.svg";
-
+import sfondo from "../MyProfile/hero-section/uno.svg";
 import pencil from "../MyProfile/hero-section/pencil.svg";
 import verified from "../MyProfile/hero-section/verified-protection-svgrepo-com.svg";
+import camera from "../MyProfile/hero-section/camera-fill.svg";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { getProfile } from "../../redux/actions";
 
 import { getOtherProfile } from "../../redux/actions";
 
 import { useParams } from "react-router-dom";
+import ModifyProfile from "../ModifyProfile";
 
 const HeroComponent = () => {
   const params = useParams();
   console.log("PARAMS dentro hero component", params.utente);
-  const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
-  const otherUser = useSelector((state) => state.otherProfile.other);; // l'utente personale nel Redux Store
-  const dispatch = useDispatch();;
 
+  const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
+  const otherUser = useSelector((state) => state.otherProfile.other); // l'utente personale nel Redux Store
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-  const [profilePersonal, setProfilePersonal] = useState({});;
+  const [profilePersonal, setProfilePersonal] = useState({});
 
   useEffect(() => {
     if (params) {
@@ -40,22 +34,16 @@ const HeroComponent = () => {
       console.log("user", user);
     }
   }, [params.utente]);
-    dispatch(getProfile()); // dispatcho da BookStore getBooksAction(), l'action creator
-    // con i superpoteri che ritornava una funzione asincrona (e che si occupa di riempire il Redux Store)
-    console.log("dispatch");
-    console.log("user", user);
-    // setProfilePersonal()
-  }, []);
-
-
-  const handleModalOpen = () => {
-    setShowModal(true);
-  };
 
   let profile = user;
   console.log("user PERSONALE dopo fetch", profile);
   let otherProfile = otherUser;
   console.log("user ALTRO dopo fetch", otherProfile);
+
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
   const handleModalClose = () => {
     setShowModal(false);
   };
@@ -66,12 +54,7 @@ const HeroComponent = () => {
         <div></div>
       ) : (
         <div className="camera position-absolute">
-          <img
-            src={camera}
-            alt=""
-            style={{ height: "1em" }}
-            className="filter-camera"
-          />
+          <img src={camera} alt="" style={{ height: "1em" }} className="filter-camera" />
         </div>
       )}
       <img src={sfondo} alt="" className="cover" />
@@ -80,17 +63,10 @@ const HeroComponent = () => {
         <Container className="mt-5">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
-              <div
-                className="otherBorder position-absolute"
-                style={{ top: "48px" }}
-              >
+              <div className="otherBorder position-absolute" style={{ top: "48px" }}>
                 <div className="profile">
                   {params.utente ? (
-                    <img
-                      src={otherProfile.image}
-                      alt=""
-                      className="imgProfile"
-                    />
+                    <img src={otherProfile.image} alt="" className="imgProfile" />
                   ) : (
                     <img src={profile.image} alt="" className="imgProfile" />
                   )}
@@ -100,11 +76,7 @@ const HeroComponent = () => {
               <div className="otherBorder position-absolute">
                 <div className="profile">
                   {params.utente ? (
-                    <img
-                      src={otherProfile.image}
-                      alt=""
-                      className="imgProfile"
-                    />
+                    <img src={otherProfile.image} alt="" className="imgProfile" />
                   ) : (
                     <img src={profile.image} alt="" className="imgProfile" />
                   )}
@@ -114,16 +86,7 @@ const HeroComponent = () => {
             )}
 
             <div className="pen">
-              {params.utente ? (
-                <div></div>
-              ) : (
-                <img
-                  src={pencil}
-                  alt=""
-                  style={{ height: "3.5em" }}
-                  className="intPen"
-                />
-              )}
+              {params.utente ? <div></div> : <img src={pencil} alt="" style={{ height: "3.5em" }} className="intPen" />}
             </div>
           </div>
           <div className="d-flex align-items-baseline">
@@ -140,12 +103,7 @@ const HeroComponent = () => {
               <div></div>
             ) : (
               <div className="dashed d-flex align-items-center mx-2">
-                <img
-                  src={verified}
-                  alt=""
-                  style={{ height: "1.5em" }}
-                  className="verified"
-                />
+                <img src={verified} alt="" style={{ height: "1.5em" }} className="verified" />
                 <p className="fs-5 fw-bold my-0" style={{ color: "#0967c2" }}>
                   Verifica ora
                 </p>
@@ -170,33 +128,22 @@ const HeroComponent = () => {
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
-                &nbsp; {otherProfile.email}
-              </p>
+              <p className="fs-5 d-inline blu fw-bold informazioni">&nbsp; {otherProfile.email}</p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
-                &nbsp; {profile.email}
-              </p>
+              <p className="fs-5 d-inline blu fw-bold informazioni">&nbsp; {profile.email}</p>
             )}
           </div>
           <div className="text-start fs-5 mb-4">
-            <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
-              style={{ color: "white" }}
-            >
+            <button className="me-2 btn-pr only-blu btn-profile fw-bold" style={{ color: "white" }}>
               Disponibile per
             </button>
             {params.utente ? (
               <button className="me-2 btn-pr fw-bold btn-profileAlt1">
                 {/* {otherProfile.title} */}
-                {
-                  otherProfile.title ? otherProfile.title : `Non disponibile`
-                }
+                {otherProfile.title ? otherProfile.title : `Non disponibile`}
               </button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
-                {profile.title}
-              </button>
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1">{profile.title}</button>
             )}
 
             <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
@@ -206,17 +153,10 @@ const HeroComponent = () => {
         <Container>
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
-              <div
-                className="otherBorder position-absolute"
-                style={{ top: "48px" }}
-              >
+              <div className="otherBorder position-absolute" style={{ top: "48px" }}>
                 <div className="profile">
                   {params.utente ? (
-                    <img
-                      src={otherProfile.image}
-                      alt=""
-                      className="imgProfile"
-                    />
+                    <img src={otherProfile.image} alt="" className="imgProfile" />
                   ) : (
                     <img src={profile.image} alt="" className="imgProfile" />
                   )}
@@ -226,11 +166,7 @@ const HeroComponent = () => {
               <div className="otherBorder position-absolute">
                 <div className="profile">
                   {params.utente ? (
-                    <img
-                      src={otherProfile.image}
-                      alt=""
-                      className="imgProfile"
-                    />
+                    <img src={otherProfile.image} alt="" className="imgProfile" />
                   ) : (
                     <img src={profile.image} alt="" className="imgProfile" />
                   )}
@@ -243,13 +179,9 @@ const HeroComponent = () => {
               {params.utente ? (
                 <div></div>
               ) : (
-                <img
-                  src={pencil}
-                  alt=""
-                  style={{ height: "3.5em" }}
-                  className="intPen"
-                />
+                <img src={pencil} alt="" style={{ height: "3.5em" }} className="intPen" onClick={handleModalOpen} />
               )}
+              <ModifyProfile show={showModal} handleClose={handleModalClose} />
               {/* <img
               src={pencil}
               alt=""
@@ -272,12 +204,7 @@ const HeroComponent = () => {
               <div></div>
             ) : (
               <div className="dashed d-flex align-items-center mx-2">
-                <img
-                  src={verified}
-                  alt=""
-                  style={{ height: "1.5em" }}
-                  className="verified"
-                />
+                <img src={verified} alt="" style={{ height: "1.5em" }} className="verified" />
                 <p className="fs-5 fw-bold my-0" style={{ color: "#0967c2" }}>
                   Verifica ora
                 </p>
@@ -302,30 +229,19 @@ const HeroComponent = () => {
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
-                &nbsp; {otherProfile.email}
-              </p>
+              <p className="fs-5 d-inline blu fw-bold informazioni">&nbsp; {otherProfile.email}</p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
-                &nbsp; {profile.email}
-              </p>
+              <p className="fs-5 d-inline blu fw-bold informazioni">&nbsp; {profile.email}</p>
             )}
           </div>
           <div className="text-start fs-5 mb-4">
-            <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
-              style={{ color: "white" }}
-            >
+            <button className="me-2 btn-pr only-blu btn-profile fw-bold" style={{ color: "white" }}>
               Disponibile per
             </button>
             {params.utente ? (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
-                {otherProfile.title}
-              </button>
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1">{otherProfile.title}</button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
-                {profile.title}
-              </button>
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1">{profile.title}</button>
             )}
 
             <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
@@ -335,5 +251,4 @@ const HeroComponent = () => {
     </div>
   );
 };
-
 export default HeroComponent;
