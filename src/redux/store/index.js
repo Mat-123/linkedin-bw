@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import fetchPersonalReduce from "../reducers/fetchPersonalReduce";
+import fetchOtherProfile from '../reducers/fetchOtherProfile'
 
 //
 // configureStore.js
@@ -16,6 +17,7 @@ const persistConfig = {
 
 const unifiedReducer = combineReducers({
   user: fetchPersonalReduce, // ricostruisce la fetta user
+  otherProfile: fetchOtherProfile
   // cart: cartReducer, // ricostruisce la fetta cart
   // book: bookReducer, // ricostruisce la fetta book
 });

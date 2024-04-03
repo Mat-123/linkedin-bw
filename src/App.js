@@ -11,8 +11,15 @@ import HeroComponent from "./components/MyProfile/HeroComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
+import RightSidebar from "./components/Home/RightSidebar";
+
+import { useParams } from "react-router-dom";
 
 function App() {
+  const params = useParams();
+  console.log("PARAMS", params);
+  console.log("PARAMS utente", params.utente);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -47,11 +54,11 @@ function App() {
                       <Sidebar />
                     </Col>
                   </Row>
-                  <FooterComponent />
                 </>
               }
             />
           </Routes>
+          <FooterComponent />
         </Container>
       </BrowserRouter>
     </div>
