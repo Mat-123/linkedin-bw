@@ -1,19 +1,20 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-function sidebarProfileCard({ id, image, name, surname, bio }) {
+function ProfileCard(props) {
   return (
-    <div>
+    <>
+    <div className="d-flex ms-4 mb-4">
       <img
         className="sidebar-circle-image"
-        src="https://media.licdn.com/dms/image/D4E03AQHDlzK_B0uZUw/profile-displayphoto-shrink_100_100/0/1704888903640?e=1717632000&v=beta&t=bcLkGdS0YkdA7h02WfnRo37253WvEKEraTOxKLc-4XU"
+        src={props.profile.image}
         alt=""
       />
       <div className="sidebar-text-profile text-start ms-2 ">
         <h4 className="fs-6">
-          {name} {surname}
+          {props.profile.name} {props.profile.surname}
         </h4>
-        <p className="sidebar-gray-text">{bio}</p>
+        <p className="sidebar-gray-text">{props.profile.bio}</p>
         <Button className="sidebar-btn py-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +34,9 @@ function sidebarProfileCard({ id, image, name, surname, bio }) {
         </Button>{" "}
       </div>
     </div>
+     <hr className="mx-3" />
+     </>
   );
 }
 
-export default sidebarProfileCard;
+export default ProfileCard;
