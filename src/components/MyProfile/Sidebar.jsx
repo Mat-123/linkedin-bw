@@ -2,45 +2,37 @@ import Button from "react-bootstrap/Button";
 import "../../assets/css/Sidebar.css";
 import badge from "../../assets/img/sidebar-hiring-badge.png";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 const Sidebar = () => {
+  const [profiles, setProfiles] = useState([]);
   const getSliceProfiles = () => {
-    fetch('https://striveschool-api.herokuapp.com/api/profile/',
-      {
-        method: 'GET',
-        headers: {
-          'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzRlZGEyODFkODAwMTlhM2VjNTIiLCJpYXQiOjE3MTIwNDczNDEsImV4cCI6MTcxMzI1Njk0MX0._hbN8joRmo0ilM2j3j5Be52RH2nTsa2Ys4TZJvVoaUw',
-        },
-      }
-      )
-        .then((resp) => {
-          if (resp.ok) {
-            return resp.json()
-          } else {
-            throw new Error('Errore nel recupero libri')
-          }
-        })
-        .then((fetchProfile) => {
-          console.log(
-            'GETSTATE, SECONDO PARAMETRO DELLA FUNZIONE ASINCRONA',
-            getState()
-          )
-          //   setBooks(fetchedBooks) // non setto più uno stato locale!
-          // ma dispatcho un'azione trasportando i libri ottenuti
-          dispatch({
-            type: FETCH_PROFILE,
-            payload: fetchProfile, // l'array del profilo ottenuto
-            // questo per invocare il reducer senza incertezze, in modo da svincolarlo da possibilità di fallimento!
-          })
-          console.log('dati fetch', fetchProfile)
-        })
-        .catch((error) => {
-          console.log('ERRORE', error)
-        })
-    }
-  }
+    fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzRlZGEyODFkODAwMTlhM2VjNTIiLCJpYXQiOjE3MTIwNDczNDEsImV4cCI6MTcxMzI1Njk0MX0._hbN8joRmo0ilM2j3j5Be52RH2nTsa2Ys4TZJvVoaUw",
+      },
+    })
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        } else {
+          throw new Error("Errore nel recupero libri");
+        }
+      })
+      .then((fetchProfiles) => {
+        //   setBooks(fetchedBooks) // non setto più uno stato locale!
+        // ma dispatcho un'azione trasportando i libri ottenuti
+
+        console.log("dati fetch", fetchProfiles);
+        setProfiles(fetchProfiles);
+      })
+      .catch((error) => {
+        console.log("ERRORE", error);
+      });
+  };
 
   return (
     <div className="sidebar mx-3">
@@ -51,7 +43,6 @@ const Sidebar = () => {
             <h3>Lingua del profilo</h3>
             <div className="pen-svg ms-auto">
               <svg
-                
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -70,7 +61,6 @@ const Sidebar = () => {
             <h3>Profilo pubblico e URL</h3>
             <div className="pen-svg ms-auto">
               <svg
-                
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -96,22 +86,27 @@ const Sidebar = () => {
         <div className="sidebar-second-section text-start d-flex flex-column align-content-center   mt-2">
           <div className="mb-3">
             <h4>Persone che potresti conoscere</h4>
-            <p className="sidebar-gray-text fs-6 ">Dalla tua scuola o università</p>
+            <p className="sidebar-gray-text fs-6 ">
+              Dalla tua scuola o università
+            </p>
           </div>
-
+          {/* singolo profilo */}
           <div className="d-flex ">
             <img
               className="sidebar-circle-image"
               src="https://media.licdn.com/dms/image/D5603AQHcB4-iaFeZTg/profile-displayphoto-shrink_100_100/0/1684614972603?e=1717632000&v=beta&t=Op3xnKPz56DH0A22Qca_AgN2cG9bXTvvkvx2e1aM5a4"
               alt=""
             />
+
+            {/* da generare 5  */}
             <div className="sidebar-text-profile text-start ms-2">
               <h4 className="fs-6">Stefano Bisignano</h4>
               <p className="sidebar-gray-text">Coordinatore Tax Credit</p>
-              <p className="sidebar-gray-text">Cinema e Audiovisivo - DGCA...</p>
+              <p className="sidebar-gray-text">
+                Cinema e Audiovisivo - DGCA...
+              </p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
@@ -136,13 +131,14 @@ const Sidebar = () => {
               src="https://media.licdn.com/dms/image/D4E03AQHDlzK_B0uZUw/profile-displayphoto-shrink_100_100/0/1704888903640?e=1717632000&v=beta&t=bcLkGdS0YkdA7h02WfnRo37253WvEKEraTOxKLc-4XU"
               alt=""
             />
+            {/* singolo profilo */}
+
             <div className="sidebar-text-profile text-start ms-2 ">
               <h4 className="fs-6">Ilaria Labate</h4>
               <p className="sidebar-gray-text">Master’s Degree Student in </p>
               <p className="sidebar-gray-text">Management Engineering</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
@@ -160,6 +156,7 @@ const Sidebar = () => {
               </Button>{" "}
             </div>
           </div>
+
           <hr className="mx-3" />
           <div className="d-flex ms-4 mt-4">
             <img
@@ -169,10 +166,11 @@ const Sidebar = () => {
             />
             <div className="sidebar-text-profile text-start ms-2">
               <h4 className="fs-6">Anna Maria Middea</h4>
-              <p className="sidebar-gray-text">Facilities Coordinator presso CBR</p>
+              <p className="sidebar-gray-text">
+                Facilities Coordinator presso CBR
+              </p>
               <Button className="sidebar-btn  py-1">
                 <svg
-                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
@@ -203,7 +201,6 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Università della Calabria</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                 
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
@@ -230,10 +227,11 @@ const Sidebar = () => {
             />
             <div className="sidebar-text-profile text-start ms-2">
               <h4 className="fs-6">Daniele Tempesta</h4>
-              <p className="sidebar-gray-text">Hanno frequentato Università d...</p>
+              <p className="sidebar-gray-text">
+                Hanno frequentato Università d...
+              </p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
