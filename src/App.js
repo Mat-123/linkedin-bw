@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
 import AddPost from "./components/Home/AddPost.jsx";
+import Experiences from "./components/MyProfile/Experiences.jsx";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
                       <HeroComponent />
                       <Recommended />
                       <Analyses />
+                      <Experiences />
                     </Col>
                     <Col xs="12" md="5" lg="4">
                       <Sidebar />
