@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 
@@ -64,14 +65,18 @@ function Experiences() {
         </div>
         <div>
           {firstThreeExperiences.map((experience, index) => (
-            <Card key={index} style={{ width: "100%", marginBottom: "10px" }}>
-              <Card.Body>
-                <Card.Title>{experience.role}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
-                <Card.Text>Start Date: {experience.startDate}</Card.Text>
-                <Card.Text>End Date: {experience.endDate}</Card.Text>
-              </Card.Body>
-            </Card>
+            <Col xs={12} md={6} lg={4} key={index}>
+              <Card style={{ width: "100%" }} className="my-1 me-1">
+                <div>
+                  <h6>{experience.role}</h6>
+                  <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
+                  <Card.Text>
+                    {experience.startDate.split("-")[0]} -{" "}
+                    {experience.endDate ? experience.endDate.split("-")[0] : "Presente"}
+                  </Card.Text>
+                </div>
+              </Card>
+            </Col>
           ))}
         </div>
       </Card.Body>
