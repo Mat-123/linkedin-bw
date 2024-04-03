@@ -1,11 +1,19 @@
 import sfondo from "../MyProfile/hero-section/uno.svg";
-
+import verifica from "./hero-section/icona-verifica.svg";
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import ModifyProfile from "../ModifyProfile";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions";
 import camera from "../MyProfile/hero-section/camera-fill.svg";
+
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import imgProfile from "./hero-section/due.svg";
+
+import pencil from "../MyProfile/hero-section/pencil.svg";
+import verified from "../MyProfile/hero-section/verified-protection-svgrepo-com.svg";
 
 const HeroComponent = () => {
   const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
