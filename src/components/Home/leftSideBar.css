@@ -1,25 +1,44 @@
-.leftsidebar_camera {
-    display: inline;
-    position: absolute;
-    top: 0;
-    right: 20px
-}
-
 .leftsidebar_header {
     position: relative;
 }
 
 .sidebarleft_imgProfile {
-    width: 72px;
+    width: 68px;
     border-radius: 50%;
     overflow: hidden;
     margin: auto;
     position: relative;
-    margin-top: -36px;
+    margin-top: -34px;
+    border: 1px solid white;
 
 }
 
 .sidebarleft_imgProfile>img {
-    width: 72px;
+    width: 68px;
 
+}
+
+
+.leftsidebar {
+    font-size: 12px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+.btn-hidden-area {
+    background: transparent;
+    border: none;
+    width: 100%;
+    border-radius: 1px;
+    height: 25px;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn-hidden-area:hover {
+    background: rgb(178, 178, 178);
 }
