@@ -45,7 +45,7 @@ const ModifyProfile = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Profile</Modal.Title>
+        <Modal.Title>Modifica Profilo</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
