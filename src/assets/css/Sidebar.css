@@ -39,8 +39,6 @@ h4 {
   color: #5e5e5e;
 }
 
-
-
 .sidebar-mostra-tutto:hover {
   cursor: pointer;
   background-color: #737373;
@@ -53,13 +51,11 @@ h4 {
 .sidebar-first-section {
   padding: 15px;
   background-color: white;
-
 }
 
 .sidebar-second-section {
   background-color: white;
   padding: 15px;
-
 }
 
 p {
@@ -86,4 +82,35 @@ h3 {
 .second-section {
   background-color: white;
   border-radius: 10px;
+}
+
+/* SIDEBAR DX HOME */
+.info:hover {
+  cursor: pointer;
+}
+
+.sidebar-dx {
+  color: #9c9c9c;
+}
+
+.btn-vedi-altro {
+  background-color: transparent;
+  border-color: transparent;
+  padding: -2px;
+}
+
+.btn-vedi-altro:hover {
+  background-color: #ebebeb;
+  border-radius: 5px;
+}
+
+.sidebar-list li:hover,
+.sidebar-list p:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.first-news {
+  max-height: 320px;
 }

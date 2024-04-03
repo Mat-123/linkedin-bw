@@ -13,33 +13,44 @@ import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
 import AddPost from "./components/Home/AddPost.jsx";
 import Experiences from "./components/MyProfile/Experiences.jsx";
+import RightSidebar from "./components/Home/RightSidebar";
+
+import { useParams } from "react-router-dom";
 
 function App() {
+  const params = useParams();
+  console.log("PARAMS", params);
+  console.log("PARAMS utente", params.utente);
+
   return (
     <div className="App">
       <BrowserRouter>
         <MyNav />
         <Container fluid="xl" className="mt-4">
-          <Row>
-            <Routes>
-              <Route
-                path="/home"
-                element={
-                  <>
+          <Routes>
+            <Route
+              path="/home"
+              element={
+                <>
+                  <Row>
                     <Col xs="12" md="5" lg="2">
                       <LeftSidebar />
                     </Col>
                     <Col xs="12" md="7">
                       <AddPost />
                     </Col>
-                    <Col className="d-xs-none" lg="3"></Col>
-                  </>
-                }
-              />
-              <Route
-                path="/me"
-                element={
-                  <>
+                    <Col className="d-xs-none" lg="3">
+                      <RightSidebar />
+                    </Col>
+                  </Row>
+                </>
+              }
+            />
+            <Route
+              path="/me"
+              element={
+                <>
+                  <Row>
                     <Col xs="12" md="7" lg="8">
                       <HeroComponent />
                       <Recommended />
@@ -49,12 +60,12 @@ function App() {
                     <Col xs="12" md="5" lg="4">
                       <Sidebar />
                     </Col>
-                  </>
-                }
-              />
-            </Routes>
-            <FooterComponent />
-          </Row>
+                  </Row>
+                  <FooterComponent />
+                </>
+              }
+            />
+          </Routes>
         </Container>
       </BrowserRouter>
     </div>
