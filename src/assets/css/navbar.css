@@ -10,7 +10,8 @@ header {
     height: 52px;
     text-align: center;
     align-content: center;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav_left {
@@ -36,6 +37,13 @@ header {
 
 }
 
+.search_collapse {
+    display: none;
+    width: 80px;
+    font-size: 13px
+}
+
+
 .utente {
     border-radius: 50%;
     overflow: hidden;
@@ -50,10 +58,12 @@ header {
     margin: 0;
 }
 
-.nav_right>div {
+.nav_links,
+.utente {
     width: 80px;
     font-size: 13px;
 }
+
 
 .svg_div {
     width: 24px;
@@ -75,19 +85,21 @@ header {
     padding: 0;
     overflow: hidden;
     padding-inline: 5px;
-
+    margin-top: -7px;
 }
 
 
-.inner-dropdown {
-    overflow: hidden;
+.dropdown {
+    padding-top: 0;
+    height: 18px;
+
 }
+
 
 .profile_pic_dd {
     width: 60px;
     border-radius: 50%;
     overflow: hidden;
-    padding-inline-start: 10px;
 }
 
 .dd_aziende {
@@ -114,6 +126,17 @@ header {
     .nav_search>input {
         display: none
     }
+
+    .search_collapse {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav_search {
+        display: none;
+    }
+
 
 }
 

@@ -14,7 +14,7 @@ import LeftSidebar from "./components/Home/LeftSidebar";
 import AddPost from "./components/Home/AddPost.jsx";
 import Experiences from "./components/MyProfile/Experiences.jsx";
 import RightSidebar from "./components/Home/RightSidebar";
-import FooterSide from './components/FooterSide'
+import FooterSide from "./components/FooterSide";
 
 import { useParams } from "react-router-dom";
 

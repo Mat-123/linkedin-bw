@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/icons/linkedin.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/navbar.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Display } from "react-bootstrap-icons";
 
 function MyNav() {
+  const [isActive, setActive] = useState(false);
+  const toggleDisplay = () => {
+    setActive(!isActive);
+  };
+
   return (
     <header>
       <Container>
@@ -26,14 +33,30 @@ function MyNav() {
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
               </div>
-
               <input type="search" />
+
+              {/* <p style={{ display: "none" }}>Cerca</p> */}
+            </div>
+            <div className="search_collapse" onClick={toggleDisplay}>
+              <div className="search_icon d-flex justify-content-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  fill="gray"
+                  className="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+              </div>
+              <p>Cerca</p>
             </div>
           </div>
           {/* ICONS RIGHT */}
           <div className="d-flex">
             <div className="nav_right d-flex">
-              <div>
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/home"}>
                 <div className="home_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +71,8 @@ function MyNav() {
                   </svg>
                 </div>
                 <p>Home</p>
-              </div>
-              <div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/network"}>
                 <div className="network_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +87,8 @@ function MyNav() {
                   </svg>
                 </div>
                 <p>Rete</p>
-              </div>
-              <div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/jobs"}>
                 <div className="jobs_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +103,8 @@ function MyNav() {
                   </svg>
                 </div>
                 <p>Lavoro</p>
-              </div>
-              <div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/messages"}>
                 <div className="messages_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,8 +119,8 @@ function MyNav() {
                   </svg>
                 </div>
                 <p>Messaggistica</p>
-              </div>
-              <div>
+              </Link>
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/notifications"}>
                 <div className="notifications_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +135,7 @@ function MyNav() {
                   </svg>
                 </div>
                 <p>Notifiche</p>
-              </div>
+              </Link>
               <div>
                 <div className="utente">
                   <div className="profile_pic">
@@ -143,32 +166,34 @@ function MyNav() {
                 <DropdownButton align="end" title="Me" id="dropdown-menu-align-end">
                   <div className="inner-dropdown ">
                     <Dropdown.Item eventKey="3" className="d-flex">
-                      <div className="profile_pic_dd">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 128 128"
-                          id="person-accent-4"
-                          style={{
-                            width: 60,
-                            height: 60,
-                          }}
-                        >
-                          <path fill="#e7e2dc" d="M0 0h128v128H0z" />
-                          <path d="M88.41 84.67a32 32 0 10-48.82 0 66.13 66.13 0 0148.82 0z" fill="#788fa5" />
-                          <path
-                            d="M88.41 84.67a32 32 0 01-48.82 0A66.79 66.79 0 000 128h128a66.79 66.79 0 00-39.59-43.33z"
-                            fill="#9db3c8"
-                          />
-                          <path
-                            d="M64 96a31.93 31.93 0 0024.41-11.33 66.13 66.13 0 00-48.82 0A31.93 31.93 0 0064 96z"
-                            fill="#56687a"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <h6>Il mio nome</h6>
-                        <p>Istruzione o impiego attuale</p>
-                      </div>
+                      <Link style={{ textDecoration: "none" }} className="nav_links" to={"/me"}>
+                        <div className="profile_pic_dd">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 128 128"
+                            id="person-accent-4"
+                            style={{
+                              width: 60,
+                              height: 60,
+                            }}
+                          >
+                            <path fill="#e7e2dc" d="M0 0h128v128H0z" />
+                            <path d="M88.41 84.67a32 32 0 10-48.82 0 66.13 66.13 0 0148.82 0z" fill="#788fa5" />
+                            <path
+                              d="M88.41 84.67a32 32 0 01-48.82 0A66.79 66.79 0 000 128h128a66.79 66.79 0 00-39.59-43.33z"
+                              fill="#9db3c8"
+                            />
+                            <path
+                              d="M64 96a31.93 31.93 0 0024.41-11.33 66.13 66.13 0 00-48.82 0A31.93 31.93 0 0064 96z"
+                              fill="#56687a"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <h6 className="text-muted">Il mio nome</h6>
+                          <p>Istruzione o impiego attuale</p>
+                        </div>
+                      </Link>
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item eventKey="1">
