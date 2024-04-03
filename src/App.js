@@ -10,6 +10,7 @@ import MyNav from "./components/MyProfile/MyNav";
 import HeroComponent from "./components/MyProfile/HeroComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
+import LeftSidebar from "./components/Home/LeftSidebar";
 
 function App() {
   return (
@@ -23,9 +24,11 @@ function App() {
                 path="/home"
                 element={
                   <>
-                    <Col xs="12" md="5" lg="2" className="bg-danger"></Col>
-                    <Col xs="12" md="7" className="bg-warning"></Col>
-                    <Col className="d-xs-none bg-danger" lg="3"></Col>
+                    <Col xs="12" md="5" lg="2">
+                      <LeftSidebar />
+                    </Col>
+                    <Col xs="12" md="7"></Col>
+                    <Col className="d-xs-none" lg="3"></Col>
                   </>
                 }
               />
