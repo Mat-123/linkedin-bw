@@ -35,7 +35,7 @@ const RightSidebar = () => {
         </div>
         <div className="first-news mt-0">
           <ul className={`fw-semibold lh-md p-4 sidebar-list ${showSecondNews ? "hide-margin" : ""}`}>
-            <li>
+            <li className="">
               Quali confini tra vita e lavoro <p className="sidebar-dx mb-2">Notizie principali</p>
             </li>
 
