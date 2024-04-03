@@ -3,6 +3,7 @@ header {
     top: 0;
     height: 53px;
     background-color: white;
+    z-index: 1;
 }
 
 .navbar_div {
@@ -76,6 +77,7 @@ header {
     padding-inline: 5px;
 
 }
+
 
 .inner-dropdown {
     overflow: hidden;
