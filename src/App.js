@@ -35,7 +35,9 @@ function App() {
                       <LeftSidebar />
                     </Col>
                     <Col xs="12" md="7"></Col>
-                    <Col className="d-xs-none" lg="3"></Col>
+                    <Col className="d-xs-none" lg="3">
+                      <RightSidebar />
+                    </Col>
                   </Row>
                 </>
               }
@@ -54,11 +56,11 @@ function App() {
                       <Sidebar />
                     </Col>
                   </Row>
+                  <FooterComponent />
                 </>
               }
             />
           </Routes>
-          <FooterComponent />
         </Container>
       </BrowserRouter>
     </div>
