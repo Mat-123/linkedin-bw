@@ -5,10 +5,11 @@ header {
     background-color: white;
 }
 
-.navbar {
+.navbar_div {
     height: 52px;
     text-align: center;
     align-content: center;
+    justify-content: space-between
 }
 
 .nav_left {
@@ -72,9 +73,66 @@ header {
     font-size: 12px;
     padding: 0;
     overflow: hidden;
+    padding-inline: 5px;
 
 }
 
 .inner-dropdown {
     overflow: hidden;
+}
+
+.profile_pic_dd {
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-inline-start: 10px;
+}
+
+.dd_aziende {
+    text-align: center;
+    border-left: 1px solid rgb(228, 228, 228);
+}
+
+.dd_aziende svg {
+    fill: rgb(57, 57, 57)
+}
+
+.dd_aziende p {
+    color: gray;
+    margin: 0;
+    font-size: 13px;
+}
+
+.dd_aziende>div {
+    width: 114px;
+
+}
+
+@media screen and (max-width: 767px) {
+    .nav_search>input {
+        display: none
+    }
+
+}
+
+.navbar_div svg {
+    fill: gray;
+}
+
+.navbar_div p {
+    color: gray;
+}
+
+.nav_right div:hover {
+    cursor: pointer;
+
+    p {
+        color: rgb(50, 50, 50)
+    }
+
+    svg {
+        fill: rgb(50, 50, 50);
+    }
+
+    ;
 }
