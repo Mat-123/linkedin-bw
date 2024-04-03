@@ -19,7 +19,7 @@ const RightSidebar = () => {
     <div className="sidebar-first-section text-start border border-1 mb-1 whiteBck">
       <div className="pb-3">
         <div className="d-flex align-content-center gap-5">
-          <h3 className="ms-1">LinkedIn Notizie</h3>
+          <h3 className="ms-1 fs-6">LinkedIn Notizie</h3>
           <div className="ms-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
