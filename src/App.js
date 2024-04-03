@@ -11,6 +11,7 @@ import HeroComponent from "./components/MyProfile/HeroComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
+import AddPost from "./components/Home/AddPost.jsx";
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
                     <Col xs="12" md="5" lg="2">
                       <LeftSidebar />
                     </Col>
-                    <Col xs="12" md="7"></Col>
+                    <Col xs="12" md="7">
+                      <AddPost />
+                    </Col>
                     <Col className="d-xs-none" lg="3"></Col>
                   </>
                 }
