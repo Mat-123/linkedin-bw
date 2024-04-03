@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ProfileCard(props) {
   return (
@@ -15,6 +16,7 @@ function ProfileCard(props) {
           {props.profile.name} {props.profile.surname}
         </h4>
         <p className="sidebar-gray-text">{props.profile.bio}</p>
+        <Link to={"/utente/" + props.profile._id}>
         <Button className="sidebar-btn py-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +34,7 @@ function ProfileCard(props) {
           </svg>{" "}
           Collegati
         </Button>{" "}
+        </Link>
       </div>
     </div>
      <hr className="mx-3" />
