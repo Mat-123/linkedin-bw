@@ -2,22 +2,25 @@ import Button from "react-bootstrap/Button";
 import "../../assets/css/Sidebar.css";
 import badge from "../../assets/img/sidebar-hiring-badge.png";
 
+import { useDispatch, useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+
 const Sidebar = () => {
   return (
     <div className="sidebar mx-3">
       {/* ---------FIRST SECTION -------- */}
-      <div className="sidebar-first-section text-start border border-1 ">
+      <div className="sidebar-first-section text-start border border-1 mb-1 whiteBck">
         <div className="pb-3  border-bottom">
           <div className="d-flex align-content-center gap-5">
             <h3>Lingua del profilo</h3>
             <div className="pen-svg ms-auto">
               <svg
-                className="ms-5"
+                
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 fill="#404040"
-                class="bi bi-pencil"
+                className="bi bi-pencil ms-5"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
@@ -31,12 +34,12 @@ const Sidebar = () => {
             <h3>Profilo pubblico e URL</h3>
             <div className="pen-svg ms-auto">
               <svg
-                className="ms-5"
+                
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 fill="#404040"
-                class="bi bi-pencil"
+                className="bi bi-pencil ms-5"
                 viewBox="0 0 16 16"
               >
                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
@@ -48,7 +51,7 @@ const Sidebar = () => {
       </div>
 
       {/* ----------SIDEBAR IMG----------- */}
-      <div className="sidebar-img border border-1 mt-2">
+      <div className="sidebar-img border border-1 my-1">
         <img className="d-flex w-100 rounded" src={badge} alt="badge" />
       </div>
 
@@ -72,17 +75,17 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Cinema e Audiovisivo - DGCA...</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  className="mb-1 me-1"
+                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-plus-fill"
+                  className="bi bi-person-plus-fill mb-1 me-1"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
                   />
                 </svg>{" "}
@@ -103,17 +106,17 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Management Engineering</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  className="mb-1 me-1"
+                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-plus-fill"
+                  className="bi bi-person-plus-fill mb-1 me-1"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
                   />
                 </svg>{" "}
@@ -133,17 +136,17 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Facilities Coordinator presso CBR</p>
               <Button className="sidebar-btn  py-1">
                 <svg
-                  className="mb-1 me-1"
+                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-plus-fill"
+                  className="bi bi-person-plus-fill mb-1 me-1"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
                   />
                 </svg>{" "}
@@ -164,17 +167,17 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Università della Calabria</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  className="mb-1 me-1"
+                 
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-plus-fill"
+                  className="bi bi-person-plus-fill mb-1 me-1"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
                   />
                 </svg>{" "}
@@ -194,17 +197,17 @@ const Sidebar = () => {
               <p className="sidebar-gray-text">Hanno frequentato Università d...</p>
               <Button className="sidebar-btn py-1">
                 <svg
-                  className="mb-1 me-1"
+                  
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-person-plus-fill"
+                  className="bi bi-person-plus-fill mb-1 me-1"
                   viewBox="0 0 16 16"
                 >
                   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
                   />
                 </svg>{" "}
@@ -213,7 +216,7 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        <div class="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
+        <div className="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
           <p className="fw-semibold mt-2">Mostra tutto</p>
         </div>
       </div>
