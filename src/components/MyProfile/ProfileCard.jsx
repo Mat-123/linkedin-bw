@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-function SidebarProfileCard(props) {
+function ProfileCard(props) {
   return (
     <>
     <div className="d-flex ms-4 mb-4">
@@ -39,4 +39,4 @@ function SidebarProfileCard(props) {
   );
 }
 
-export default SidebarProfileCard;
+export default ProfileCard;

@@ -5,7 +5,7 @@ import badge from "../../assets/img/sidebar-hiring-badge.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
-import SidebarProfileCard from "./SidebarProfileCard";
+import ProfileCard from "./ProfileCard";
 
 const Sidebar = () => {
   const [profiles, setProfiles] = useState([]);
@@ -101,7 +101,7 @@ const Sidebar = () => {
 
           {/* dove fare map */}
           {profiles.map((profilo, i) => {
-            return <SidebarProfileCard key={i} profile={profilo} />;
+            return <ProfileCard key={i} profile={profilo} />;
           })}
         </div>
         <div className="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
