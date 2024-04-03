@@ -11,6 +11,7 @@ import HeroComponent from "./components/MyProfile/HeroComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
+import RightSidebar from "./components/Home/RightSidebar";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
                       <LeftSidebar />
                     </Col>
                     <Col xs="12" md="7"></Col>
-                    <Col className="d-xs-none" lg="3"></Col>
+                    <Col className="d-xs-none" lg="3">
+                      <RightSidebar />
+                    </Col>
                   </>
                 }
               />
