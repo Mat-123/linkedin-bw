@@ -9,6 +9,9 @@ import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyNav";
 import HeroComponent from "./components/MyProfile/HeroComponent";
 
+
+// import { PersistGate } from 'redux-persist/integration/react'
+
 function App() {
   return (
     <div className="App">

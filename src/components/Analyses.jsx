@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 
 function Analyses() {
   return (
-    <Card style={{ width: "auto" }}>
+    <Card style={{ width: "auto"}} className='whiteBck mb-1'>
       <Card.Body>
         <Card.Title className="mb-2 text-muted text-start">Analisi</Card.Title>
         <Card.Subtitle className="mb-2 text-muted text-start">
@@ -24,7 +24,7 @@ function Analyses() {
             <span className="ms-2"> Solo per te</span>
           </div>
         </Card.Subtitle>
-        <Card.Text>
+        <div>
           <Row>
             <Col xs={4}>
               <svg
@@ -32,7 +32,7 @@ function Analyses() {
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
                 fill="currentColor"
-                class="mercado-match"
+                className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
@@ -46,7 +46,7 @@ function Analyses() {
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
                 fill="currentColor"
-                class="mercado-match"
+                className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
@@ -55,7 +55,7 @@ function Analyses() {
               </svg>
             </Col>
           </Row>
-        </Card.Text>
+        </div>
       </Card.Body>
       <Card.Footer>
         <a href="/">Mostra tutte le analisi →</a>
