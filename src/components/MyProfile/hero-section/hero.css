@@ -127,3 +127,28 @@
     background-color: #d6d6d6;
     border: solid 0.1em #666666;
   }
+/* footer */
+
+.ftText{
+  color: #62615f;
+}
+.ftText:hover{
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.colorIcon{
+  /* color: #3d3d3c; */
+  fill: #3d3d3c;
+}
+#persDrop{
+  background-color: white;
+  color: #62615f;
+  border-color: #3d3d3c;
+}
+#persDrop2{
+  background-color: rgba(255, 255, 255, 0);
+  color: #62615f;
+  border: none;
+}
