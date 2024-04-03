@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
 const Sidebar = () => {
+  const [profiles, setProfiles] = useState([]);
   const getSliceProfiles = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       method: "GET",
@@ -21,16 +22,12 @@ const Sidebar = () => {
           throw new Error("Errore nel recupero libri");
         }
       })
-      .then((fetchProfile) => {
-        console.log("GETSTATE, SECONDO PARAMETRO DELLA FUNZIONE ASINCRONA", getState());
+      .then((fetchProfiles) => {
         //   setBooks(fetchedBooks) // non setto più uno stato locale!
         // ma dispatcho un'azione trasportando i libri ottenuti
-        dispatch({
-          type: FETCH_PROFILE,
-          payload: fetchProfile, // l'array del profilo ottenuto
-          // questo per invocare il reducer senza incertezze, in modo da svincolarlo da possibilità di fallimento!
-        });
-        console.log("dati fetch", fetchProfile);
+
+        console.log("dati fetch", fetchProfiles);
+        setProfiles(fetchProfiles);
       })
       .catch((error) => {
         console.log("ERRORE", error);
@@ -98,6 +95,8 @@ const Sidebar = () => {
               src="https://media.licdn.com/dms/image/D5603AQHcB4-iaFeZTg/profile-displayphoto-shrink_100_100/0/1684614972603?e=1717632000&v=beta&t=Op3xnKPz56DH0A22Qca_AgN2cG9bXTvvkvx2e1aM5a4"
               alt=""
             />
+
+            {/* da generare 5  */}
             <div className="sidebar-text-profile text-start ms-2">
               <h4 className="fs-6">Stefano Bisignano</h4>
               <p className="sidebar-gray-text">Coordinatore Tax Credit</p>
@@ -122,12 +121,13 @@ const Sidebar = () => {
             </div>
           </div>
           <hr className="mx-3" />
-          {/* <div className="d-flex ms-4 mb-4">
+          <div className="d-flex ms-4 mb-4">
             <img
               className="sidebar-circle-image"
               src="https://media.licdn.com/dms/image/D4E03AQHDlzK_B0uZUw/profile-displayphoto-shrink_100_100/0/1704888903640?e=1717632000&v=beta&t=bcLkGdS0YkdA7h02WfnRo37253WvEKEraTOxKLc-4XU"
               alt=""
             />
+
             <div className="sidebar-text-profile text-start ms-2 ">
               <h4 className="fs-6">Ilaria Labate</h4>
               <p className="sidebar-gray-text">Master’s Degree Student in </p>
@@ -151,6 +151,7 @@ const Sidebar = () => {
               </Button>{" "}
             </div>
           </div>
+
           <hr className="mx-3" />
           <div className="d-flex ms-4 mb-4">
             <img
@@ -238,7 +239,7 @@ const Sidebar = () => {
                 Collegati
               </Button>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
           <p className="fw-semibold mt-2">Mostra tutto</p>
