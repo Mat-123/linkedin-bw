@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../assets/icons/linkedin.svg";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../assets/css/navbar.css";
+import logo from "../../assets/icons/linkedin.svg";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../assets/css/navbar.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 
 function MyNav() {

@@ -6,9 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import Sidebar from "./components/MyProfile/Sidebar";
-import MyNav from "./components/MyNav";
+import MyNav from "./components/MyProfile/MyNav";
 import HeroComponent from "./components/MyProfile/HeroComponent";
-
 
 // import { PersistGate } from 'redux-persist/integration/react'
 
