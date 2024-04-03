@@ -13,7 +13,13 @@ import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
 import RightSidebar from "./components/Home/RightSidebar";
 
+import { useParams } from "react-router-dom";
+
 function App() {
+  const params = useParams();
+  console.log("PARAMS", params);
+  console.log("PARAMS utente", params.utente);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -50,6 +56,24 @@ function App() {
                   </>
                 }
               />
+              {/* prova profile */}
+              <Route
+                path="/utente/:utente"
+                element={
+                  <>
+                    <Col xs="12" md="7" lg="8">
+                      <HeroComponent />
+                      
+                      {/* <Recommended /> */}
+                      {/* <Analyses /> */}
+                    </Col>
+                    <Col xs="12" md="5" lg="4">
+                      <Sidebar />
+                    </Col>
+                  </>
+                }
+              />
+              {/*  */}
             </Routes>
             <FooterComponent />
           </Row>
