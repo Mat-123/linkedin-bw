@@ -1,0 +1,25 @@
+.leftsidebar_camera {
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 20px
+}
+
+.leftsidebar_header {
+    position: relative;
+}
+
+.sidebarleft_imgProfile {
+    width: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    margin-top: -36px;
+
+}
+
+.sidebarleft_imgProfile>img {
+    width: 72px;
+
+}
