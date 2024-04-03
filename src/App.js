@@ -8,26 +8,47 @@ import "./App.css";
 import Sidebar from "./components/MyProfile/Sidebar";
 import MyNav from "./components/MyProfile/MyNav";
 import HeroComponent from "./components/MyProfile/HeroComponent";
-
-// import { PersistGate } from 'redux-persist/integration/react'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FooterComponent from "./components/MyProfile/FooterComponent";
 
 function App() {
   return (
     <div className="App">
-      <MyNav />
-      <Container fluid="xl" className="mt-4">
-        <Row>
-          <Col xs="12" md="7" lg="8">
-            <HeroComponent />
-            <Recommended />
-            <Analyses />
-          </Col>
-          <Col xs="12" md="5" lg="4">
-            <Sidebar />
-          </Col>
-          {/* Footer */}
-        </Row>
-      </Container>
+      <BrowserRouter>
+        <MyNav />
+        <Container fluid="xl" className="mt-4">
+          <Row>
+            <Routes>
+              <Route
+                path="/home"
+                element={
+                  <>
+                    <Col xs="12" md="5" lg="2" className="bg-danger"></Col>
+                    <Col xs="12" md="7" className="bg-warning"></Col>
+                    <Col className="d-xs-none bg-danger" lg="3"></Col>
+                  </>
+                }
+              />
+              <Route
+                path="/me"
+                element={
+                  <>
+                    <Col xs="12" md="7" lg="8">
+                      <HeroComponent />
+                      <Recommended />
+                      <Analyses />
+                    </Col>
+                    <Col xs="12" md="5" lg="4">
+                      <Sidebar />
+                    </Col>
+                  </>
+                }
+              />
+            </Routes>
+            <FooterComponent />
+          </Row>
+        </Container>
+      </BrowserRouter>
     </div>
   );
 }
