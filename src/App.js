@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
 import RightSidebar from "./components/Home/RightSidebar";
+import FooterSide from './components/FooterSide'
 
 import { useParams } from "react-router-dom";
 
@@ -34,9 +35,10 @@ function App() {
                     <Col xs="12" md="5" lg="2">
                       <LeftSidebar />
                     </Col>
-                    <Col xs="12" md="7"></Col>
-                    <Col className="d-xs-none" lg="3">
+                    <Col xs="12" md="6"></Col>
+                    <Col className="d-xs-none" lg="4">
                       <RightSidebar />
+                      <FooterSide />
                     </Col>
                   </Row>
                 </>

@@ -17,7 +17,8 @@ const RightSidebar = () => {
 
   return (
     <div className="sidebar-first-section text-start border border-1 mb-1 whiteBck">
-      <div className="pb-3">
+      {/* <div className="pb-3"> */}
+      <div>
         <div className="d-flex align-content-center gap-5">
           <h3 className="ms-1 fs-6">LinkedIn Notizie</h3>
           <div className="ms-auto">
@@ -34,8 +35,8 @@ const RightSidebar = () => {
           </div>
         </div>
         <div className="first-news mt-0">
-          <ul className={`fw-semibold lh-md p-4 sidebar-list ${showSecondNews ? "hide-margin" : ""}`}>
-            <li className="">
+          <ul className="fw-semibold lh-md p-4 sidebar-list mb-0 pb-1">
+            <li>
               Quali confini tra vita e lavoro <p className="sidebar-dx mb-2">Notizie principali</p>
             </li>
 
@@ -74,7 +75,7 @@ const RightSidebar = () => {
 
         {showSecondNews && (
           <div className="second-news mt-0">
-            <ul className="fw-semibold lh-md p-4 sidebar-list mb-0">
+            <ul className="fw-semibold lh-md p-4 sidebar-list mb-0 mt-0 pt-0">
               <li>
                 Più sfide per la cybersicurezza <p className="sidebar-dx mb-2">4 giorni fa</p>
               </li>
