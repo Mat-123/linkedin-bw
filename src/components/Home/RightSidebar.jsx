@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../../assets/css/Sidebar.css";
+import { Toast } from "react-bootstrap";
 
 const RightSidebar = () => {
   const [showSecondNews, setShowSecondNews] = useState(false);
   const [showLessDetails, setShowLessDetails] = useState(false);
-
+  const [showInfoToast, setShowInfoToast] = useState(false);
   const toggleSecondNews = () => {
     setShowSecondNews(!showSecondNews);
     setShowLessDetails(false);
@@ -29,9 +30,30 @@ const RightSidebar = () => {
               fill="currentColor"
               className="bi bi-info-square-fill info mb-2"
               viewBox="0 0 16 16"
+              onClick={() => setShowInfoToast(true)}
+              style={{ cursor: "pointer" }}
             >
               <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
             </svg>
+
+            <Toast
+              show={showInfoToast}
+              onClose={() => setShowInfoToast(false)}
+              style={{
+                position: "absolute",
+                top: "1",
+                right: "0",
+                margin: "1rem",
+              }}
+            >
+              <Toast.Header>
+                <strong className="me-auto">Informazioni su LinkedIn Notizie</strong>
+              </Toast.Header>
+              <Toast.Body>
+                LinkedIn Notizie è una sezione che fornisce aggiornamenti e notizie rilevanti riguardanti il mondo del
+                lavoro e del business.
+              </Toast.Body>
+            </Toast>
           </div>
         </div>
         <div className="first-news mt-0">

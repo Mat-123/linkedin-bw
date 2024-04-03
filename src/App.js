@@ -11,6 +11,8 @@ import HeroComponent from "./components/MyProfile/HeroComponent";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
+import AddPost from "./components/Home/AddPost.jsx";
+import Experiences from "./components/MyProfile/Experiences.jsx";
 import RightSidebar from "./components/Home/RightSidebar";
 import FooterSide from './components/FooterSide'
 
@@ -35,8 +37,10 @@ function App() {
                     <Col xs="12" md="5" lg="2">
                       <LeftSidebar />
                     </Col>
-                    <Col xs="12" md="6"></Col>
-                    <Col className="d-xs-none" lg="4">
+                    <Col xs="12" md="7">
+                      <AddPost />
+                    </Col>
+                    <Col className="d-xs-none" lg="3">
                       <RightSidebar />
                       <FooterSide />
                     </Col>
@@ -53,6 +57,7 @@ function App() {
                       <HeroComponent />
                       <Recommended />
                       <Analyses />
+                      <Experiences />
                     </Col>
                     <Col xs="12" md="5" lg="4">
                       <Sidebar />
