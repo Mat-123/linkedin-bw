@@ -5,6 +5,8 @@ import badge from "../../assets/img/sidebar-hiring-badge.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
+import SidebarProfileCard from "./SidebarProfileCard";
+
 const Sidebar = () => {
   const [profiles, setProfiles] = useState([]);
   const getSliceProfiles = () => {
@@ -27,12 +29,18 @@ const Sidebar = () => {
         // ma dispatcho un'azione trasportando i libri ottenuti
 
         console.log("dati fetch", fetchProfiles);
-        setProfiles(fetchProfiles);
+        let arrProfile = fetchProfiles;
+        let arrSlice = arrProfile.slice(0, 5);
+        setProfiles(arrSlice);
       })
       .catch((error) => {
         console.log("ERRORE", error);
       });
   };
+
+  useEffect(() => {
+    getSliceProfiles();
+  }, []);
 
   return (
     <div className="sidebar mx-3">
@@ -86,160 +94,15 @@ const Sidebar = () => {
         <div className="sidebar-second-section text-start d-flex flex-column align-content-center   mt-2">
           <div className="mb-3">
             <h4>Persone che potresti conoscere</h4>
-            <p className="sidebar-gray-text fs-6 ">Dalla tua scuola o università</p>
+            <p className="sidebar-gray-text fs-6 ">
+              Dalla tua scuola o università
+            </p>
           </div>
 
-          <div className="d-flex ms-4 mb-4">
-            <img
-              className="sidebar-circle-image"
-              src="https://media.licdn.com/dms/image/D5603AQHcB4-iaFeZTg/profile-displayphoto-shrink_100_100/0/1684614972603?e=1717632000&v=beta&t=Op3xnKPz56DH0A22Qca_AgN2cG9bXTvvkvx2e1aM5a4"
-              alt=""
-            />
-
-            {/* da generare 5  */}
-            <div className="sidebar-text-profile text-start ms-2">
-              <h4 className="fs-6">Stefano Bisignano</h4>
-              <p className="sidebar-gray-text">Coordinatore Tax Credit</p>
-              <p className="sidebar-gray-text">Cinema e Audiovisivo - DGCA...</p>
-              <Button className="sidebar-btn py-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-person-plus-fill mb-1 me-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fillRule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>{" "}
-                Collegati
-              </Button>{" "}
-            </div>
-          </div>
-          <hr className="mx-3" />
-          <div className="d-flex ms-4 mb-4">
-            <img
-              className="sidebar-circle-image"
-              src="https://media.licdn.com/dms/image/D4E03AQHDlzK_B0uZUw/profile-displayphoto-shrink_100_100/0/1704888903640?e=1717632000&v=beta&t=bcLkGdS0YkdA7h02WfnRo37253WvEKEraTOxKLc-4XU"
-              alt=""
-            />
-
-            <div className="sidebar-text-profile text-start ms-2 ">
-              <h4 className="fs-6">Ilaria Labate</h4>
-              <p className="sidebar-gray-text">Master’s Degree Student in </p>
-              <p className="sidebar-gray-text">Management Engineering</p>
-              <Button className="sidebar-btn py-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-person-plus-fill mb-1 me-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fillRule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>{" "}
-                Collegati
-              </Button>{" "}
-            </div>
-          </div>
-
-          <hr className="mx-3" />
-          <div className="d-flex ms-4 mb-4">
-            <img
-              className="sidebar-circle-image"
-              src="https://media.licdn.com/dms/image/D5603AQHsmoXwvhetxA/profile-displayphoto-shrink_100_100/0/1681213929415?e=1717632000&v=beta&t=TD_DuZCyQgStvq5RDjrYQTwVY6sUzH_LvGg6D_grejQ"
-              alt=""
-            />
-            <div className="sidebar-text-profile text-start ms-2">
-              <h4 className="fs-6">Anna Maria Middea</h4>
-              <p className="sidebar-gray-text">Facilities Coordinator presso CBR</p>
-              <Button className="sidebar-btn  py-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-person-plus-fill mb-1 me-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fillRule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>{" "}
-                Collegati
-              </Button>{" "}
-            </div>
-          </div>
-          <hr className="mx-3" />
-          <div className="d-flex ms-4 mb-4">
-            <img
-              className="sidebar-circle-image"
-              src="https://media.licdn.com/dms/image/D4D03AQHgdt3DlCHo7g/profile-displayphoto-shrink_100_100/0/1698226873728?e=1717632000&v=beta&t=pW1dR6xOnJy9m4OBARdjogBI9hN4HeppysAdZSxfnX0"
-              alt=""
-            />
-            <div className="sidebar-text-profile text-start ms-2">
-              <h4 className="fs-6">Andrea Pugliese</h4>
-              <p className="sidebar-gray-text">Professore associato presso</p>
-              <p className="sidebar-gray-text">Università della Calabria</p>
-              <Button className="sidebar-btn py-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-person-plus-fill mb-1 me-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fillRule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>{" "}
-                Collegati
-              </Button>{" "}
-            </div>
-          </div>
-          <hr className="mx-3" />
-          <div className="d-flex ms-4 mb-4">
-            <img
-              className="sidebar-circle-image"
-              src="https://media.licdn.com/dms/image/D4D03AQF0qoKzKQ7ooQ/profile-displayphoto-shrink_100_100/0/1708171579295?e=1717632000&v=beta&t=COLOPN4W9vfhBA7SD3y4MpVdCiAd61NzUcprIjwTKk8"
-              alt=""
-            />
-            <div className="sidebar-text-profile text-start ms-2">
-              <h4 className="fs-6">Daniele Tempesta</h4>
-              <p className="sidebar-gray-text">Hanno frequentato Università d...</p>
-              <Button className="sidebar-btn py-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-person-plus-fill mb-1 me-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  <path
-                    fillRule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
-                  />
-                </svg>{" "}
-                Collegati
-              </Button>
-            </div>
-          </div>
+          {/* dove fare map */}
+          {profiles.map((profilo, i) => {
+            return <SidebarProfileCard key={i} profile={profilo} />;
+          })}
         </div>
         <div className="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
           <p className="fw-semibold mt-2">Mostra tutto</p>
