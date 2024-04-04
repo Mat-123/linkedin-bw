@@ -15,6 +15,7 @@ import AddPost from "./components/Home/AddPost.jsx";
 import Experiences from "./components/MyProfile/Experiences.jsx";
 import RightSidebar from "./components/Home/RightSidebar";
 import FooterSide from "./components/Home/FooterSide.jsx";
+import Login from "./components/Home/Login.jsx";
 
 import { useParams } from "react-router-dom";
 
@@ -29,6 +30,7 @@ function App() {
         <MyNav />
         <Container fluid="xl" className="mt-4">
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route
               path="/"
               element={
