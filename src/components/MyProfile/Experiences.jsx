@@ -53,7 +53,7 @@ function Experiences() {
       <Card style={{ width: "100%" }} className="p-0 whiteBck">
         <Card.Body>
           <div className="d-flex justify-content-between">
-            <Card.Title>Formazione</Card.Title>
+            <Card.Title>Esperienze</Card.Title>
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
