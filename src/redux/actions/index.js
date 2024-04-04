@@ -22,9 +22,11 @@ export const getProfile = () => {
         console.log("GETSTATE, SECONDO PARAMETRO DELLA FUNZIONE ASINCRONA", getState());
         //   setBooks(fetchedBooks) // non setto più uno stato locale!
         // ma dispatcho un'azione trasportando i libri ottenuti
+        let image = fetchProfile.image || "ghost_person.png";
+        let fetchProfileCopy = { ...fetchProfile, image: image };
         dispatch({
           type: FETCH_PROFILE,
-          payload: fetchProfile, // l'array del profilo ottenuto
+          payload: fetchProfileCopy, // l'oggetto del profilo ottenuto
           // questo per invocare il reducer senza incertezze, in modo da svincolarlo da possibilità di fallimento!
         });
         console.log("dati fetch", fetchProfile);
@@ -84,10 +86,12 @@ export const saveProfile = (formData) => {
     })
       .then((resp) => {
         if (resp.ok) {
+          let image = formData.image || "ghost_person.png";
+          let formDataCopy = { ...formData, image: image };
           // Invia l'azione per aggiornare lo stato locale con i nuovi dati del profilo
           dispatch({
             type: SAVE_PROFILE,
-            payload: formData,
+            payload: formDataCopy,
           });
           console.log("Profile saved successfully");
         } else {

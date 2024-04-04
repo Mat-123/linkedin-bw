@@ -42,6 +42,32 @@ const ModifyProfile = ({ show, handleClose }) => {
     handleClose();
   };
 
+  // -------------------BASE64----------------
+
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setFormData({
+      ...formData,
+      image: base64,
+    });
+  };
+
+  // -------------------BASE64----------------
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -79,7 +105,11 @@ const ModifyProfile = ({ show, handleClose }) => {
           </Form.Group>
           <Form.Group controlId="formImg">
             <Form.Label>Immagine</Form.Label>
-            <Form.Control type="text" name="image" value={formData.image} onChange={handleChange} required />
+            <Form.Control type="text" name="image" value={formData.image} onChange={handleChange} />
+          </Form.Group>
+          <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Carica la tua immagine profilo</Form.Label>
+            <Form.Control type="file" name="image" onChange={handleFileUpload} />
           </Form.Group>
           <div className="mt-2 d-flex justify-content-between">
             <Button variant="secondary" onClick={handleClose}>

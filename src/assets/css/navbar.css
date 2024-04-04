@@ -122,7 +122,7 @@ header {
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
     .nav_search>input {
         display: none
     }
@@ -138,6 +138,14 @@ header {
     }
 
 
+}
+
+@media screen and (max-width: 852px) {
+
+    .nav_right p,
+    .nav_search p {
+        display: none;
+    }
 }
 
 .navbar_div svg {
@@ -160,4 +168,10 @@ header {
     }
 
     ;
+}
+
+.nav_premium {
+    color: rgb(212, 155, 48);
+    text-decoration: underline;
+    font-size: 10px;
 }

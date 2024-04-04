@@ -49,7 +49,7 @@ const HeroComponent = () => {
   };
 
   return (
-    <div className="card position-relative pb-2 whiteBck mb-1">
+    <div className="card px-0 pt-0 position-relative overflow-hidden whiteBck mb-1">
       {params.utente ? (
         <div></div>
       ) : (
@@ -60,7 +60,7 @@ const HeroComponent = () => {
       <img src={sfondo} alt="" className="cover" />
       {/* INIZIO MODIFICA --------------------------------------------------------- */}
       {params.utente ? (
-        <Container className="mt-5">
+        <div className="mt-5">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
               <div className="otherBorder position-absolute" style={{ top: "48px" }}>
@@ -148,9 +148,9 @@ const HeroComponent = () => {
 
             <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
           </div>
-        </Container>
+        </div>
       ) : (
-        <Container>
+        <div>
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
               <div className="otherBorder position-absolute" style={{ top: "48px" }}>
@@ -246,7 +246,7 @@ const HeroComponent = () => {
 
             <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
           </div>
-        </Container>
+        </div>
       )}
     </div>
   );

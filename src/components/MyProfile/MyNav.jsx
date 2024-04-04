@@ -14,7 +14,7 @@ function MyNav() {
 
   return (
     <header>
-      <Container>
+      <Container fluid="xl">
         <div className="navbar_div pt-1 d-flex">
           {/* LOGO */}
           <div className="nav_left d-flex">
@@ -136,6 +136,7 @@ function MyNav() {
                 </div>
                 <p>Notifiche</p>
               </Link>
+              {/* dropdown profile */}
               <div>
                 <div className="utente">
                   <div className="profile_pic">
@@ -166,7 +167,7 @@ function MyNav() {
                 <DropdownButton align="end" title="Me" id="dropdown-menu-align-end">
                   <div className="inner-dropdown ">
                     <Dropdown.Item eventKey="3" className="d-flex">
-                      <Link style={{ textDecoration: "none" }} className="nav_links" to={"/me"}>
+                      <Link style={{ textDecoration: "none" }} className="nav_links  w-100" to={"/me"}>
                         <div className="profile_pic_dd">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -237,6 +238,7 @@ function MyNav() {
               </div>
               <p>Aziende</p>
             </div>
+            <span className="nav_premium">Prova Premium per 0 EUR</span>
           </div>
         </div>
       </Container>
