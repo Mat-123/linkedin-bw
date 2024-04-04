@@ -59,7 +59,7 @@ function MyNav() {
           <div className="d-flex">
             <div className="nav_right d-flex">
               <Link style={{ textDecoration: "none" }} className="nav_links" to={"/"}>
-                <div className="home_icon">
+                <div className="home_icon position-relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ function MyNav() {
                     <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
                   </svg>
 
-                  <span class="position-absolute top-0 start-75 translate-middle p-2 bg-danger border border-light rounded-circle mt-1">
+                  <span class="position-absolute top-0 start-75 translate-middle mt-1 p-2 bg-danger border border-light rounded-circle">
                     <span class="visually-hidden">New alerts</span>
                   </span>
                 </div>
@@ -139,10 +139,10 @@ function MyNav() {
                   >
                     <path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"></path>
                   </svg>
-                  <span class="position-absolute top-0 start-75 translate-middle badge rounded-pill bg-danger mt-1">
-                    10+
+                  <span className="position-absolute top-0 start-75 translate-middle rounded-pill bg-danger mt-1 badge badge-home">
+                    1
                   </span>
-                  <span class="visually-hidden">unread messages</span>
+                  <span className="visually-hidden">unread messages</span>
                 </div>
                 <p>Notifiche</p>
               </Link>
