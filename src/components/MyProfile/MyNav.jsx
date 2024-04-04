@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/icons/linkedin.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/navbar.css";
@@ -6,11 +6,29 @@ import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Display } from "react-bootstrap-icons";
 
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "../../redux/actions";
+
 function MyNav() {
+  const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
+
+  const dispatch = useDispatch();
+
+
   const [isActive, setActive] = useState(false);
   const toggleDisplay = () => {
     setActive(!isActive);
   };
+
+
+  useEffect(() => {
+
+      dispatch(getProfile()); // dispatcho da BookStore getBooksAction(), l'action creator
+      // con i superpoteri che ritornava una funzione asincrona (e che si occupa di riempire il Redux Store)
+      console.log("dispatch fatto profilo personale");
+      console.log("user", user);
+
+  }, []);
 
   return (
     <header>
@@ -39,7 +57,7 @@ function MyNav() {
 
               {/* <p style={{ display: "none" }}>Cerca</p> */}
             </div>
-            <div className="search_collapse" onClick={toggleDisplay}>
+            <div className="search_collapse iconNav" onClick={toggleDisplay}>
               <div className="search_icon d-flex justify-content-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +70,7 @@ function MyNav() {
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                 </svg>
               </div>
-              <p>Cerca</p>
+              <p className="textNav">Cerca</p>
             </div>
           </div>
           {/* ICONS RIGHT */}
@@ -77,8 +95,9 @@ function MyNav() {
                   </span>
                 </div>
                 <p>Home</p>
-              </Link>
-              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/network"}>
+                </Link>
+              </div>
+              <div>
                 <div className="network_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,9 +111,9 @@ function MyNav() {
                     <path d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z"></path>
                   </svg>
                 </div>
-                <p>Rete</p>
-              </Link>
-              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/jobs"}>
+                <p className="textNav">Rete</p>
+              </div>
+              <div>
                 <div className="jobs_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -108,9 +127,9 @@ function MyNav() {
                     <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"></path>
                   </svg>
                 </div>
-                <p>Lavoro</p>
-              </Link>
-              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/messages"}>
+                <p className="textNav">Lavoro</p>
+              </div>
+              <div>
                 <div className="messages_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -124,10 +143,10 @@ function MyNav() {
                     <path d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z"></path>
                   </svg>
                 </div>
-                <p>Messaggistica</p>
-              </Link>
-              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/notifications"}>
-                <div className="notifications_icon position-relative">
+                <p className="textNav">Messaggistica</p>
+              </div>
+              <div>
+                <div className="notifications_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -144,13 +163,13 @@ function MyNav() {
                   </span>
                   <span className="visually-hidden">unread messages</span>
                 </div>
-                <p>Notifiche</p>
-              </Link>
-              {/* dropdown profile */}
+                <p className="textNav">Notifiche</p>
+              </div>
               <div>
                 <div className="utente">
                   <div className="profile_pic">
-                    <div className="svg_div">
+                    {user.image}
+                    {/* <div className="svg_div">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 128 128"
@@ -171,7 +190,7 @@ function MyNav() {
                           fill="#56687a"
                         />
                       </svg>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <DropdownButton align="end" title="Me" id="dropdown-menu-align-end">
@@ -201,8 +220,10 @@ function MyNav() {
                           </svg>
                         </div>
                         <div>
-                          <h6 className="text-muted">Il mio nome</h6>
-                          <p>Istruzione o impiego attuale</p>
+                          {/* <h6 className="text-muted">Il mio nome</h6> */}
+                          <h6 className="text-muted">{user.name}{user.surname}</h6>
+                          {/* <p>Istruzione o impiego attuale</p> */}
+                          <p>{user.title}</p>
                         </div>
                       </Link>
                     </Dropdown.Item>
@@ -250,7 +271,7 @@ function MyNav() {
             </div>
             <span className="nav_premium">Prova Premium per 0 EUR</span>
           </div>
-        </div>
+        {/* </div> */}
       </Container>
     </header>
   );

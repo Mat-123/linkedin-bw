@@ -8,25 +8,25 @@ import Container from "react-bootstrap/Container";
 const FooterSide = () => {
   return (
     <Container className="text-center">
-      <Nav className="flex-column ">
+      <Nav className="flex-column" style={{fontSize:'small'}}>
         <div className="d-flex justify-content-center">
           <div>
-            <NavLink className="titoloFooter ftText">Informazioni</NavLink>
+            <NavLink className="titoloFooter ftText" style={{paddingBottom:'0'}}>Informazioni</NavLink>
           </div>
           <div>
-            <NavLink className="titoloFooter ftText">Accessibilità</NavLink>
+            <NavLink className="titoloFooter ftText" style={{paddingBottom:'0'}}>Accessibilità</NavLink>
           </div>
         </div>
         <Row>
           <Col>
-            <span className="sottotitoloFooter ftText">Centro assistenza</span>
+            <span className="sottotitoloFooter ftText" style={{paddingBottom:'0'}}>Centro assistenza</span>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Dropdown className="btnFooter w-100">
+            <Dropdown className="btnFooter w-100" style={{height: '2.4em'}}>
               {/* <Dropdown.Toggle variant="success" id="dropdown-basic"> */}
-              <Dropdown.Toggle id="persDrop2">Privacy e condizioni</Dropdown.Toggle>
+              <Dropdown.Toggle id="persDrop2" style={{fontSize:'small', paddingBottom:'0'}}>Privacy e condizioni</Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Informativa sulla privacy</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Contratto di licenza</Dropdown.Item>
@@ -38,7 +38,7 @@ const FooterSide = () => {
 
         <Row>
           <Col>
-            <NavLink className="titoloFooter ftText">Opzioni per gli annunci pubblicitari</NavLink>
+            <div className="titoloFooter ftText" style={{paddingInline: 'none'}}>Opzioni per gli annunci pubblicitari</div>
           </Col>
         </Row>
 
@@ -47,9 +47,9 @@ const FooterSide = () => {
             <NavLink className="titoloFooter ftText px-0">Pubblicità</NavLink>
           </div>
           <div>
-            <Dropdown className="btnFooter w-100">
+            <Dropdown className="btnFooter w-100" style={{height: '2.4em'}}>
               {/* <Dropdown.Toggle variant="success" id="dropdown-basic"> */}
-              <Dropdown.Toggle id="persDrop2" className="px-0">
+              <Dropdown.Toggle id="persDrop2" className="px-0" style={{fontSize:'small'}}>
                 Servizi per le aziende
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -63,10 +63,10 @@ const FooterSide = () => {
 
         <div className="d-flex justify-content-center">
           <div>
-            <NavLink className="titoloFooter ftText">Scarica l'app Linkedin</NavLink>
+            <NavLink className="titoloFooter ftText" style={{paddingTop:'0'}}>Scarica l'app Linkedin</NavLink>
           </div>
           <div>
-            <NavLink className="titoloFooter ftText">Altro</NavLink>
+            <NavLink className="titoloFooter ftText" style={{paddingTop:'0'}}>Altro</NavLink>
           </div>
         </div>
       </Nav>

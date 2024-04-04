@@ -13,6 +13,7 @@ import FooterComponent from "./components/MyProfile/FooterComponent";
 import LeftSidebar from "./components/Home/LeftSidebar";
 import AddPost from "./components/Home/AddPost.jsx";
 import Experiences from "./components/MyProfile/Experiences.jsx";
+import AllExperiences from "./components/MyProfile/AllExperiences.jsx";
 import RightSidebar from "./components/Home/RightSidebar";
 import FooterSide from "./components/Home/FooterSide.jsx";
 import Login from "./components/Home/Login.jsx";
@@ -69,6 +70,7 @@ function App() {
                 </>
               }
             />
+            <Route path="/me/all-experiences/:userId" element={<AllExperiences />} />
             <Route
               path="/utente/:utente"
               element={
