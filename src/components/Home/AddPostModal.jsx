@@ -7,19 +7,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions";
 
 function AddPostModal() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  // PRENDE PROFILO
   const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
   const dispatch = useDispatch();
+  let postText = "";
 
   useEffect(() => {
     dispatch(getProfile());
     console.log("dispatch");
     console.log("user", user);
   }, []);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => handleSubmit(() => setShow(false));
+  const handleShow = () => setShow(true);
+
+  const handleSubmit = async (callback) => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/`, {
+        method: "POST",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBlYzVmYjEzZGYwYTAwMTk0OWY1OGIiLCJpYXQiOjE3MTIyNDQyMTksImV4cCI6MTcxMzQ1MzgxOX0.rFL8x1EdBXk5cXLx5V1jW6V2YTHy_0lLODn5-0_z7KE",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: postText }),
+      });
+
+      if (response.ok) {
+        callback();
+      } else {
+        console.error("Errore durante l'invio dei dati");
+      }
+    } catch (error) {
+      console.error("Errore durante la richiesta:", error);
+    }
+  };
 
   return (
     <>
@@ -61,6 +84,7 @@ function AddPostModal() {
             type="text"
             style={{ border: "none", background: "transparent", outline: 0, maxHeight: "500px" }}
             placeholder="Di cosa vuoi parlare?"
+            onChange={(e) => (postText = e.target.value)}
           />
           {/* SMILEY */}
           <div className="ps-4 py-5">

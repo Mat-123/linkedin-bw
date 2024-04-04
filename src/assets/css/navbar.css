@@ -87,7 +87,7 @@ header {
   width: 60px;
   border-radius: 50%;
   overflow: hidden;
-  padding-inline-start: 10px;
+
 }
 
 .dd_aziende {
@@ -211,10 +211,25 @@ header {
   margin: 0;
 }
 
+.profile_pic_dd {
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 5px;
+
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .nav_links,
 .utente {
   width: 80px;
   font-size: 13px;
+
 }
 
 .svg_div {
@@ -222,6 +237,7 @@ header {
   border-radius: 50%;
   overflow: hidden;
 }
+
 
 .profile_pic {
   display: flex;
@@ -337,4 +353,9 @@ header {
 
 .avatar_dropdown {
   width: 24px;
+}
+
+.avatar_dd {
+  width: 60px;
+  height: 60px
 }

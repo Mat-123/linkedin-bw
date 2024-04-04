@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <MyNav />
-        <Container fluid="xl" className="mt-4">
+        <Container fluid="md" className="mt-4">
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route
