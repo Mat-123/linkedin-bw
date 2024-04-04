@@ -239,7 +239,9 @@ function MyNav() {
                     <Dropdown.Item eventKey="4">Post e attività</Dropdown.Item>
                     <Dropdown.Item eventKey="4">Account per la pubblicazione di offerte</Dropdown.Item>
                     <Dropdown.Divider />
+                    {/* <Link to={"/login"}> */}
                     <Dropdown.Item eventKey="4">Esci</Dropdown.Item>
+                    {/* </Link> */}
                   </div>
                 </DropdownButton>
               </div>
