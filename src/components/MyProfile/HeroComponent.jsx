@@ -166,7 +166,7 @@ const HeroComponent = () => {
           </Container>
         </div>
       ) : (
-        <Container>
+        <Container className="mt-5 px-4">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
               <div
