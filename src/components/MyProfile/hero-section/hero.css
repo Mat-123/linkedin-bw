@@ -12,8 +12,23 @@
   padding-block-end: 0.3em;
 }
 
-.profile {
+/* .profile { */
+.otherBorder {
+  border: 4px solid white;
   border-radius: 50%;
+  top: 5em;
+  /* forse da riaggiungere */
+}
+@media screen and (max-width: 992px){
+  .otherBorder {
+    border: 4px solid white;
+    border-radius: 50%;
+    top: 0em;
+    /* forse da riaggiungere */
+  }
+}
+.profile {
+  /* border-radius: 50%;
   height: 160px;
   width: 160px;
   background-color: #f8fafd;
@@ -22,12 +37,22 @@
 
 .otherBorder {
   border: 4px solid white;
+  padding: 3em; */
   border-radius: 50%;
-  top: 3.5em;
+  top: 5em;
+  /* forse da riaggiungere */
 }
 
-.my-4Personal {
-  margin-bottom: -1.5rem !important;
+/* .my-4Personal { */
+  /* margin-bottom: -1.5rem !important; */
+@media screen and (max-width: 992px){
+  .profile-position{
+    top: 2em;
+  }
+}
+
+.my-4Personal{
+    margin-bottom: -1.5rem !important;
 }
 
 .imgProfile {
@@ -36,6 +61,7 @@
   width: 100%; */
   height: 160px;
   width: 160px;
+  border-radius: 50%;
 }
 
 .margin {
@@ -50,8 +76,8 @@
   border: dashed #0967c2;
   border-radius: 3em;
   color: #0967c2;
-  padding-inline: 1.7em;
-  height: 2em;
+  padding-inline: 0.5em;
+  height: 1.5em;
   /* padding-block: 0.5em; */
 }
 
@@ -179,4 +205,11 @@
   background-color: rgba(255, 255, 255, 0);
   color: #62615f;
   border: none;
+}
+
+@media screen and(max-width: 991px){
+  .personal{
+    top:0em
+  }
+  
 }
