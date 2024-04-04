@@ -11,7 +11,7 @@ import { getProfile } from "../../redux/actions";
 import { getOtherProfile } from "../../redux/actions";
 
 import { useParams } from "react-router-dom";
-import ModifyProfile from "../ModifyProfile";
+import ModifyProfile from "./ModifyProfile";
 
 const HeroComponent = () => {
   const params = useParams();

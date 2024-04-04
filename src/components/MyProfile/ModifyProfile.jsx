@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfile, saveProfile } from "../redux/actions";
+import { getProfile, saveProfile } from "../../redux/actions";
 
 const ModifyProfile = ({ show, handleClose }) => {
   const dispatch = useDispatch();
