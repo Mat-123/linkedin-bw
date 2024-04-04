@@ -42,7 +42,11 @@
   padding: 3em; */
   border-radius: 50%;
   top: 5em;
+ 
   /* forse da riaggiungere */
+}
+.profile img{
+  object-fit: cover;
 }
 
 /* .my-4Personal { */
@@ -214,4 +218,30 @@
     top: 0em
   }
 
+}
+
+/* post */
+.b-sopra{
+  border-top: solid 0.1em #e8e8e8;
+}
+.rel{
+  position: relative
+}
+.abs{
+  position: absolute;
+  right: 0.4em;
+  top: 0.4em;
+}
+
+/* post */
+.b-sopra{
+  border-top: solid 0.1em #e8e8e8;
+}
+.rel{
+  position: relative
+}
+.abs{
+  position: absolute;
+  right: 0.4em;
+  top: 0.4em;
 }
