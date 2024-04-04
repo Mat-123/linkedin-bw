@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 import AddExperiences from "./AddExperiences";
+import { Link } from "react-router-dom"; // Importare Link se React Router è utilizzato per la navigazione
+import AllExperiences from "./AllExperiences";
 
 function Experiences() {
   const user = useSelector((state) => state.user.available);
@@ -36,7 +38,7 @@ function Experiences() {
     fetchData();
   }, [userId]);
 
-  const firstThreeExperiences = experiences.slice(0, 3);
+  const limitedExperiences = experiences.slice(0, 2); // Limitare le esperienze a massimo 2
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -84,21 +86,27 @@ function Experiences() {
             </div>
           </div>
           <div>
-            {firstThreeExperiences.map((experience, index) => (
-              <Col xs={12} lg={4} key={index}>
-                <Card style={{ width: "100%" }} className="my-1 me-1">
-                  <div>
-                    <h6>{experience.role}</h6>
-                    <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
-                    <Card.Text>
-                      {experience.startDate.split("-")[0]} -{" "}
-                      {experience.endDate ? experience.endDate.split("-")[0] : "Presente"}
-                    </Card.Text>
-                  </div>
-                </Card>
-              </Col>
-            ))}
+            <Row>
+              {limitedExperiences.map((experience, index) => (
+                <Col xs={12} key={experience._id}>
+                  <Card
+                    style={{ width: "100%" }}
+                    className="m-1 h-100 border-start-0 border-end-0 border-top-0 rounded-0"
+                  >
+                    <div>
+                      <h6>{experience.role}</h6>
+                      <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
+                      <Card.Text>
+                        {experience.startDate.split("-")[0]} -{" "}
+                        {experience.endDate ? experience.endDate.split("-")[0] : "Presente"}
+                      </Card.Text>
+                    </div>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
           </div>
+          {experiences.length > 2 && <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze</Link>}
         </Card.Body>
       </Card>
 
