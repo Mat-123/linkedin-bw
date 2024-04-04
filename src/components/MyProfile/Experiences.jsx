@@ -50,7 +50,7 @@ function Experiences() {
 
   return (
     <>
-      <Card style={{ width: "100%" }}>
+      <Card style={{ width: "100%" }} className="p-0 whiteBck">
         <Card.Body>
           <div className="d-flex justify-content-between">
             <Card.Title>Formazione</Card.Title>
@@ -91,7 +91,7 @@ function Experiences() {
                 <Col xs={12} key={experience._id}>
                   <Card
                     style={{ width: "100%" }}
-                    className="m-1 h-100 border-start-0 border-end-0 border-top-0 rounded-0"
+                    className="m-1 h-100 border-start-0 border-end-0 border-bottom-0 rounded-0"
                   >
                     <div>
                       <h6>{experience.role}</h6>
@@ -106,8 +106,13 @@ function Experiences() {
               ))}
             </Row>
           </div>
-          {experiences.length > 2 && <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze</Link>}
         </Card.Body>
+
+        {experiences.length > 2 && (
+          <Card.Footer className="text-center text-decoration-none" style={{ cursor: "pointer" }}>
+            <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze →</Link>
+          </Card.Footer>
+        )}
       </Card>
 
       <AddExperiences userId={userId} show={showModal} handleClose={handleCloseModal} />
