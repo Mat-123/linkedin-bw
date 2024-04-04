@@ -116,3 +116,15 @@ h3 {
 .first-news {
   /* max-height: 320px; */
 }
+
+.hide-margin {
+  margin-bottom: 0;
+}
+
+ul > li > p {
+  font-size: 13px;
+}
+
+ul > li {
+  font-size: 15px;
+}

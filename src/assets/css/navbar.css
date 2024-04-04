@@ -1,142 +1,180 @@
 header {
-    position: sticky;
-    top: 0;
-    height: 53px;
-    background-color: white;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  height: 53px;
+  background-color: white;
+  z-index: 1;
 }
 
 .navbar_div {
-    height: 52px;
-    text-align: center;
-    align-content: center;
-    justify-content: space-between
+  height: 52px;
+  text-align: center;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav_left {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .nav_search {
-    background-color: #EDF3F8;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    height: 35px;
-    margin-left: 5px
+  background-color: #edf3f8;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  margin-left: 5px;
 }
 
 .nav_search input {
-    border: none;
-    outline: none;
-    background: none;
+  border: none;
+  outline: none;
+  background: none;
+}
 
+.search_collapse {
+  display: none;
+  width: 80px;
+  font-size: 13px;
 }
 
 .utente {
-    border-radius: 50%;
-    overflow: hidden;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .nav_right svg {
-    fill: rgb(57, 57, 57)
+  fill: rgb(57, 57, 57);
 }
 
 .nav_right p {
-    color: gray;
-    margin: 0;
+  color: gray;
+  margin: 0;
 }
 
-.nav_right>div {
-    width: 80px;
-    font-size: 13px;
+.nav_links,
+.utente {
+  width: 80px;
+  font-size: 13px;
 }
 
 .svg_div {
-    width: 24px;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 24px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-
 .profile_pic {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #dropdown-menu-align-end {
-    border: none;
-    background: white;
-    color: gray;
-    font-size: 12px;
-    padding: 0;
-    overflow: hidden;
-    padding-inline: 5px;
-
+  border: none;
+  background: white;
+  color: gray;
+  font-size: 12px;
+  padding: 0;
+  overflow: hidden;
+  padding-inline: 5px;
+  margin-top: -7px;
 }
 
-
-.inner-dropdown {
-    overflow: hidden;
+.dropdown {
+  padding-top: 0;
+  height: 18px;
 }
 
 .profile_pic_dd {
-    width: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    padding-inline-start: 10px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .dd_aziende {
-    text-align: center;
-    border-left: 1px solid rgb(228, 228, 228);
+  text-align: center;
+  border-left: 1px solid rgb(228, 228, 228);
 }
 
 .dd_aziende svg {
-    fill: rgb(57, 57, 57)
+  fill: rgb(57, 57, 57);
 }
 
 .dd_aziende p {
-    color: gray;
-    margin: 0;
-    font-size: 13px;
+  color: gray;
+  margin: 0;
+  font-size: 13px;
 }
 
-.dd_aziende>div {
-    width: 114px;
-
+.dd_aziende > div {
+  width: 114px;
 }
 
-@media screen and (max-width: 767px) {
-    .nav_search>input {
-        display: none
-    }
+@media screen and (max-width: 1024px) {
+  .nav_search > input {
+    display: none;
+  }
 
+  .search_collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav_search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .nav_right p,
+  .nav_search p {
+    display: none;
+  }
 }
 
 .navbar_div svg {
-    fill: gray;
+  fill: gray;
 }
 
 .navbar_div p {
-    color: gray;
+  color: gray;
 }
 
 .nav_right div:hover {
-    cursor: pointer;
+  cursor: pointer;
 
-    p {
-        color: rgb(50, 50, 50)
+  p {
+    color: rgb(50, 50, 50);
+  }
+
+  svg {
+    fill: rgb(50, 50, 50);
+  }
+}
+
+    
+}
+
+@media screen and (max-width: 991px){
+    .textNav{
+        display: none;
     }
-
-    svg {
-        fill: rgb(50, 50, 50);
+    .iconPadding{
+        padding-top: 0.7em;
     }
-
-    ;
+    .nav_right>div {
+        width: 4.5em;
+        font-size: 13px;
+    }
+}
+.nav_premium {
+  color: rgb(212, 155, 48);
+  text-decoration: underline;
+  font-size: 10px;
 }
 
 @media screen and (max-width: 991px){

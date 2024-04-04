@@ -1,0 +1,50 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 8px;
+  outline: none;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
