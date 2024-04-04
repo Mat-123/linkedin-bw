@@ -1,10 +1,11 @@
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
+import { Cursor } from "react-bootstrap-icons";
 
 function Analyses() {
   return (
-    <Card style={{ width: "auto"}} className='whiteBck mb-1'>
+    <Card style={{ width: "auto" }} className="whiteBck mb-1 p-0">
       <Card.Body>
         <Card.Title className="mb-2 text-muted text-start">Analisi</Card.Title>
         <Card.Subtitle className="mb-2 text-muted text-start">
@@ -57,8 +58,10 @@ function Analyses() {
           </Row>
         </div>
       </Card.Body>
-      <Card.Footer>
-        <a href="/">Mostra tutte le analisi →</a>
+      <Card.Footer className="text-center">
+        <a href="/" className="text-decoration-none" style={{ cursor: "pointer" }}>
+          Mostra tutte le analisi →
+        </a>
       </Card.Footer>
     </Card>
   );

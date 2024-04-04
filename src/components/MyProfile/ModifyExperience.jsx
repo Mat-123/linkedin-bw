@@ -93,7 +93,7 @@ function ModifyExperience({ experience, userId, expId, onSave, onDelete, onClose
           </Button>
 
           <div>
-            <Button variant="secondary" onClick={onClose}>
+            <Button variant="secondary" onClick={onClose} className="me-2">
               Chiudi
             </Button>
             <Button variant="primary" onClick={handleSave}>
