@@ -60,12 +60,11 @@ const HeroComponent = () => {
       <img src={sfondo} alt="" className="cover" />
       {/* INIZIO MODIFICA --------------------------------------------------------- */}
       {params.utente ? (
-        <Container className="mt-5">
+        <Container className="mt-5 px-4">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
               <div
-                className="otherBorder position-absolute"
-                style={{ top: "48px" }}
+                className="otherBorder position-absolute profile-position"
               >
                 <div className="profile">
                   {params.utente ? (
@@ -111,11 +110,11 @@ const HeroComponent = () => {
           </div>
           <div className="d-flex align-items-baseline">
             {params.utente ? (
-              <p className="fw-bold fs-3 nome">
+              <p className="fw-bold fs-4 nome">
                 {otherProfile.name} {otherProfile.surname}
               </p>
             ) : (
-              <p className="fw-bold fs-3 nome">
+              <p className="fw-bold fs-4 nome">
                 {profile.name} {profile.surname}
               </p>
             )}
@@ -126,7 +125,7 @@ const HeroComponent = () => {
                 <img
                   src={verified}
                   alt=""
-                  style={{ height: "1.5em" }}
+                  style={{ height: "1em" }}
                   className="verified"
                 />
                 <p className="fs-5 fw-bold my-0" style={{ color: "#0967c2" }}>
@@ -143,55 +142,54 @@ const HeroComponent = () => {
           {/* <p className="blu fs-5 margin">{profile.bio}</p> */}
           <div className="left d-flex">
             {params.utente ? (
-              <p className="fs-5 d-inline">{otherProfile.area}&nbsp; </p>
+              <p className="d-inline">{otherProfile.area}&nbsp; </p>
             ) : (
-              <p className="fs-5 d-inline">{profile.area}&nbsp; </p>
+              <p className="d-inline">{profile.area}&nbsp; </p>
             )}
             {/* <p className="fs-5 d-inline">{profile.area}&nbsp; </p> */}
-            <p className="fs-5 d-inline">&middot;</p>
+            <p className="d-inline">&middot;</p>
             {/* <p className="fs-5 d-inline blu fw-bold informazioni">
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {otherProfile.email}
               </p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {profile.email}
               </p>
             )}
           </div>
-          <div className="text-start fs-5 mb-4">
+          <div className="text-start fs-5 my-4">
             <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
+              className="me-2 btn-pr only-blu btn-profile fw-bold btn"
               style={{ color: "white" }}
             >
               Disponibile per
             </button>
             {params.utente ? (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {/* {otherProfile.title} */}
                 {
                   otherProfile.title ? otherProfile.title : `Non disponibile`
                 }
               </button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {profile.title}
               </button>
             )}
 
-            <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
+            <button className="btn-pr fw-bold btn-profileAlt2 btn">Altro</button>
           </div>
         </Container>
       ) : (
-        <Container>
+        <Container className="mt-5 px-4">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
               <div
-                className="otherBorder position-absolute"
-                style={{ top: "48px" }}
+                className="otherBorder position-absolute profile-position"
               >
                 <div className="profile">
                   {params.utente ? (
@@ -243,11 +241,11 @@ const HeroComponent = () => {
           </div>
           <div className="d-flex align-items-baseline">
             {params.utente ? (
-              <p className="fw-bold fs-3 nome">
+              <p className="fw-bold fs-4 nome">
                 {otherProfile.name} {otherProfile.surname}
               </p>
             ) : (
-              <p className="fw-bold fs-3 nome">
+              <p className="fw-bold fs-4 nome">
                 {profile.name} {profile.surname}
               </p>
             )}
@@ -258,7 +256,7 @@ const HeroComponent = () => {
                 <img
                   src={verified}
                   alt=""
-                  style={{ height: "1.5em" }}
+                  style={{ height: "1em" }}
                   className="verified"
                 />
                 <p className="fs-5 fw-bold my-0" style={{ color: "#0967c2" }}>
@@ -275,43 +273,43 @@ const HeroComponent = () => {
           {/* <p className="blu fs-5 margin">{profile.bio}</p> */}
           <div className="left d-flex">
             {params.utente ? (
-              <p className="fs-5 d-inline">{otherProfile.area}&nbsp; </p>
+              <p className="d-inline">{otherProfile.area}&nbsp; </p>
             ) : (
-              <p className="fs-5 d-inline">{profile.area}&nbsp; </p>
+              <p className="d-inline">{profile.area}&nbsp; </p>
             )}
             {/* <p className="fs-5 d-inline">{profile.area}&nbsp; </p> */}
-            <p className="fs-5 d-inline">&middot;</p>
+            <p className="d-inline">&middot;</p>
             {/* <p className="fs-5 d-inline blu fw-bold informazioni">
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {otherProfile.email}
               </p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {profile.email}
               </p>
             )}
           </div>
-          <div className="text-start fs-5 mb-4">
+          <div className="text-start fs-5 my-4">
             <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
+              className="me-2 btn-pr only-blu btn-profile fw-bold btn"
               style={{ color: "white" }}
             >
               Disponibile per
             </button>
             {params.utente ? (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {otherProfile.title}
               </button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {profile.title}
               </button>
             )}
 
-            <button className="btn-pr fw-bold btn-profileAlt2">Altro</button>
+            <button className="btn-pr fw-bold btn-profileAlt2 btn">Altro</button>
           </div>
         </Container>
       )}
