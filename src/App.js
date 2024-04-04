@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Recommended from "./components/Recommended";
-import Analyses from "./components/Analyses";
+import Recommended from "./components/MyProfile/Recommended.jsx";
+import Analyses from "./components/MyProfile/Analyses.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +14,7 @@ import LeftSidebar from "./components/Home/LeftSidebar";
 import AddPost from "./components/Home/AddPost.jsx";
 import Experiences from "./components/MyProfile/Experiences.jsx";
 import RightSidebar from "./components/Home/RightSidebar";
-import FooterSide from "./components/FooterSide";
+import FooterSide from "./components/Home/FooterSide.jsx";
 
 import { useParams } from "react-router-dom";
 

@@ -3,7 +3,7 @@ import MiniCardCarousel from "./MiniCardCarousel";
 
 function Recommended() {
   return (
-    <Card className='whiteBck mb-1'>
+    <Card className="whiteBck mb-1">
       <Card.Body>
         <Card.Title className="text-start">Consigliato per te</Card.Title>
         <Card.Subtitle className="mb-2 text-muted text-start">
@@ -26,7 +26,7 @@ function Recommended() {
         <Card.Text>
           Some quick example text to build on the card title and make up the bulk of the card's content.
         </Card.Text>
-        <div className='text-start w-100'>
+        <div className="text-start w-100">
           <h5>Principiante</h5>
           <div className="d-flex align-items-center">
             <progress value={30} max={70} className="w-100" color="dark" />
