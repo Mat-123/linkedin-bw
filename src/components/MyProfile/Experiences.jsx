@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 import AddExperiences from "./AddExperiences";
-import { Link } from "react-router-dom"; // Importare Link se React Router è utilizzato per la navigazione
+import { Link } from "react-router-dom";
 import AllExperiences from "./AllExperiences";
 
 function Experiences() {
@@ -13,32 +13,31 @@ function Experiences() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
-          method: "GET",
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBlYzVmYjEzZGYwYTAwMTk0OWY1OGIiLCJpYXQiOjE3MTIyNDQyMTksImV4cCI6MTcxMzQ1MzgxOX0.rFL8x1EdBXk5cXLx5V1jW6V2YTHy_0lLODn5-0_z7KE",
-            "Content-Type": "application/json",
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setExperiences(data);
-          console.log(data);
-        } else {
-          console.error("Failed to fetch data");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
     fetchData();
   }, [userId]);
 
-  const limitedExperiences = experiences.slice(0, 2); // Limitare le esperienze a massimo 2
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
+        method: "GET",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBlYzVmYjEzZGYwYTAwMTk0OWY1OGIiLCJpYXQiOjE3MTIyNDQyMTksImV4cCI6MTcxMzQ1MzgxOX0.rFL8x1EdBXk5cXLx5V1jW6V2YTHy_0lLODn5-0_z7KE",
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setExperiences(data);
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const limitedExperiences = experiences.slice(0, 2);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -46,6 +45,10 @@ function Experiences() {
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const updateExperiences = () => {
+    fetchData(); // Aggiorna le esperienze richiamando l'API
   };
 
   return (
@@ -115,7 +118,12 @@ function Experiences() {
         )}
       </Card>
 
-      <AddExperiences userId={userId} show={showModal} handleClose={handleCloseModal} />
+      <AddExperiences
+        userId={userId}
+        show={showModal}
+        handleClose={handleCloseModal}
+        updateExperiences={updateExperiences}
+      />
     </>
   );
 }

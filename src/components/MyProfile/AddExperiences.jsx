@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
-const MyModal = ({ show, handleClose }) => {
+const MyModal = ({ show, handleClose, updateExperiences }) => {
   const [formData, setFormData] = useState({
     role: "",
     company: "",
@@ -33,6 +33,14 @@ const MyModal = ({ show, handleClose }) => {
 
       if (response.ok) {
         handleClose();
+        updateExperiences();
+        setFormData({
+          role: "",
+          company: "",
+          startDate: "",
+          endDate: "",
+          description: "",
+        });
       } else {
         console.error("Errore durante l'invio dei dati");
       }
