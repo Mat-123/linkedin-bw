@@ -85,7 +85,7 @@ function Experiences() {
           </div>
           <div>
             {firstThreeExperiences.map((experience, index) => (
-              <Col xs={12} md={6} lg={4} key={index}>
+              <Col xs={12} lg={4} key={index}>
                 <Card style={{ width: "100%" }} className="my-1 me-1">
                   <div>
                     <h6>{experience.role}</h6>
