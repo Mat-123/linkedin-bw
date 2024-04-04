@@ -18,7 +18,9 @@ function MyNav() {
         <div className="navbar_div pt-1 d-flex">
           {/* LOGO */}
           <div className="nav_left d-flex">
-            <img src={logo} alt="linkedin" />
+            <Link style={{ textDecoration: "none" }} className="nav_links" to={"/"}>
+              <img src={logo} alt="linkedin" />
+            </Link>
             {/* SEARCH */}
             <div className="nav_search">
               <div className="search_icon d-flex align-items-center">
@@ -56,8 +58,8 @@ function MyNav() {
           {/* ICONS RIGHT */}
           <div className="d-flex">
             <div className="nav_right d-flex">
-              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/home"}>
-                <div className="home_icon position-relative">
+              <Link style={{ textDecoration: "none" }} className="nav_links" to={"/"}>
+                <div className="home_icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

@@ -30,7 +30,7 @@ function App() {
         <Container fluid="xl" className="mt-4">
           <Routes>
             <Route
-              path="/home"
+              path="/"
               element={
                 <>
                   <Row>
