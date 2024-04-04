@@ -3,6 +3,8 @@ import { Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 import AddExperiences from "./AddExperiences";
+import { Link } from "react-router-dom"; // Importare Link se React Router è utilizzato per la navigazione
+import AllExperiences from "./AllExperiences";
 
 function Experiences() {
   const user = useSelector((state) => state.user.available);
@@ -36,7 +38,7 @@ function Experiences() {
     fetchData();
   }, [userId]);
 
-  const firstThreeExperiences = experiences.slice(0, 3);
+  const limitedExperiences = experiences.slice(0, 2); // Limitare le esperienze a massimo 2
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -85,7 +87,7 @@ function Experiences() {
           </div>
           <div>
             <Row>
-              {firstThreeExperiences.map((experience, index) => (
+              {limitedExperiences.map((experience, index) => (
                 <Col xs={12} key={experience._id}>
                   <Card
                     style={{ width: "100%" }}
@@ -104,6 +106,7 @@ function Experiences() {
               ))}
             </Row>
           </div>
+          {experiences.length > 2 && <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze</Link>}
         </Card.Body>
       </Card>
 
