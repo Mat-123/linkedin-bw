@@ -41,7 +41,7 @@ h4 {
 
 .sidebar-mostra-tutto:hover {
   cursor: pointer;
-  background-color: #737373;
+  background-color: #ebebeb;
 }
 
 .sidebar-img {
@@ -111,10 +111,6 @@ h3 {
   background-color: #f0f0f0;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.first-news {
-  /* max-height: 320px; */
 }
 
 .hide-margin {

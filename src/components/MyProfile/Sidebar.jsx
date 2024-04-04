@@ -94,7 +94,7 @@ const Sidebar = () => {
       )}
 
       {/* ----------SIDEBAR IMG----------- */}
-      <div className="sidebar-img border border-1 my-1">
+      <div className="sidebar-img border border-1 my-3">
         <img className="d-flex w-100 rounded" src={badge} alt="badge" />
       </div>
 
@@ -103,9 +103,7 @@ const Sidebar = () => {
         <div className="sidebar-second-section text-start d-flex flex-column align-content-center   mt-2">
           <div className="mb-3">
             <h4>Persone che potresti conoscere</h4>
-            <p className="sidebar-gray-text fs-6 ">
-              Dalla tua scuola o università
-            </p>
+            <p className="sidebar-gray-text fs-6 ">Dalla tua scuola o università</p>
           </div>
 
           {/* dove fare map */}
@@ -114,7 +112,7 @@ const Sidebar = () => {
           })}
         </div>
         <div className="sidebar-mostra-tutto d-flex justify-content-center align-items-center border-top  rounded-bottom ">
-          <p className="fw-semibold mt-2">Mostra tutto</p>
+          <p className="fw-semibold mt-2 p-1">Mostra tutto</p>
         </div>
       </div>
     </div>
