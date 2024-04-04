@@ -1,50 +1,47 @@
 .leftsidebar_header {
-    position: relative;
+  position: relative;
 }
 
 .sidebarleft_imgProfile {
-    width: 68px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: auto;
-    position: relative;
-    margin-top: -34px;
-    border: 1px solid white;
-
+  width: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  margin-top: -34px;
+  border: 1px solid white;
 }
 
 .sidebarleft_imgProfile>img {
-    width: 68px;
-    height: 68px;
-
+  width: 68px;
+  height: 68px;
 }
 
-
 .leftsidebar {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .btn-hidden-area {
-    background: transparent;
-    border: none;
-    width: 100%;
-    border-radius: 1px;
-    height: 25px;
-    padding: 0;
-    margin-top: 10px;
-    font-size: 15px;
-    font-weight: 500;
-    color: gray;
+  background: transparent;
+  border: none;
+  width: 100%;
+  border-radius: 1px;
+  height: 25px;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
 }
 
 .btn-hidden-area:hover {
-    background: rgb(178, 178, 178);
+  background: rgb(178, 178, 178);
 }
 
 .hidden-area {
-    display: none;
+  display: none;
 }

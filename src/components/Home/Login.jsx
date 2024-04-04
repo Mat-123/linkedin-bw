@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import loginImg from "../../assets/img/hero_loginPage.svg";
 import { useNavigate } from "react-router-dom";
+import FooterComponent from "../MyProfile/FooterComponent";
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -36,9 +37,11 @@ const Login = () => {
   };
 
   return (
+    // NAVBAR
+
     <Container>
       <Row>
-        <Col>
+        <Col xs={12} md={5}>
           <h1 className="mt-2 ms-3">
             Ti diamo il benvenuto <br /> nella tua community professionale
           </h1>
@@ -84,10 +87,11 @@ const Login = () => {
             </div>
           </form>
         </Col>
-        <Col>
-          <img src={loginImg} alt="" style={{ width: "750px" }} />
+        <Col xs={12} md={7}>
+          <img src={loginImg} alt="" style={{ width: "100%", maxWidth: "750px" }} className="d-xs-none" />
         </Col>
       </Row>
+      <FooterComponent />
     </Container>
   );
 };
