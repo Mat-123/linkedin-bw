@@ -53,7 +53,7 @@ const HeroComponent = () => {
       {params.utente ? (
         <div></div>
       ) : (
-        <div className="camera position-absolute">
+        <div className="camera position-absolute personal">
           <img src={camera} alt="" style={{ height: "1em" }} className="filter-camera" />
         </div>
       )}
@@ -64,7 +64,7 @@ const HeroComponent = () => {
         <Container className="mt-5 px-4">
           <div className="d-flex my-4 my-4Personal">
             {params.utente ? (
-              <div className="otherBorder position-absolute" style={{ top: "48px" }}>
+              <div className="otherBorder position-absolute" >
                 <div className="profile">
                   {params.utente ? (
                     <img src={otherProfile.image} alt="" className="imgProfile" />
@@ -74,7 +74,7 @@ const HeroComponent = () => {
                 </div>
               </div>
             ) : (
-              <div className="otherBorder position-absolute">
+              <div className="otherBorder position-absolute personal">
                 <div className="profile">
                   {params.utente ? (
                     <img src={otherProfile.image} alt="" className="imgProfile" />
@@ -134,18 +134,18 @@ const HeroComponent = () => {
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {otherProfile.email}
               </p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {profile.email}
               </p>
             )}
           </div>
-          <div className="text-start fs-5 mb-4">
+          <div className="text-start fs-5 my-4">
             <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
+              className="me-2 btn-pr only-blu btn-profile fw-bold btn"
               style={{ color: "white" }}
             >
               Disponibile per
@@ -156,13 +156,14 @@ const HeroComponent = () => {
                 {otherProfile.title ? otherProfile.title : `Non disponibile`}
               </button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {profile.title}
               </button>
             )}
 
             <button className="btn-pr fw-bold btn-profileAlt2 btn">Altro</button>
           </div>
+          </Container>
         </div>
       ) : (
         <Container>
@@ -170,7 +171,6 @@ const HeroComponent = () => {
             {params.utente ? (
               <div
                 className="otherBorder position-absolute"
-                style={{ top: "48px" }}
               >
                 <div className="profile">
                   {params.utente ? (
@@ -181,7 +181,7 @@ const HeroComponent = () => {
                 </div>
               </div>
             ) : (
-              <div className="otherBorder position-absolute">
+              <div className="otherBorder position-absolute personal">
                 <div className="profile">
                   {params.utente ? (
                     <img src={otherProfile.image} alt="" className="imgProfile" />
@@ -252,35 +252,37 @@ const HeroComponent = () => {
             &nbsp; Informazioni di contatto
           </p> */}
             {params.utente ? (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {otherProfile.email}
               </p>
             ) : (
-              <p className="fs-5 d-inline blu fw-bold informazioni">
+              <p className="d-inline blu fw-bold informazioni">
                 &nbsp; {profile.email}
               </p>
             )}
           </div>
-          <div className="text-start fs-5 mb-4">
+          <div className="text-start fs-5 my-4">
             <button
-              className="me-2 btn-pr only-blu btn-profile fw-bold"
+              className="me-2 btn-pr only-blu btn-profile fw-bold btn"
               style={{ color: "white" }}
             >
               Disponibile per
             </button>
             {params.utente ? (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {otherProfile.title}
               </button>
             ) : (
-              <button className="me-2 btn-pr fw-bold btn-profileAlt1">
+              <button className="me-2 btn-pr fw-bold btn-profileAlt1 btn">
                 {profile.title}
               </button>
             )}
 
             <button className="btn-pr fw-bold btn-profileAlt2 btn">Altro</button>
           </div>
-        </div>
+          
+        </Container>
+        
       )}
     </div>
   );

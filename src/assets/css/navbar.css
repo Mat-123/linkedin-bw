@@ -1,4 +1,157 @@
 header {
+    position: sticky;
+    top: 0;
+    height: 53px;
+    background-color: white;
+    z-index: 1;
+}
+
+.navbar_div {
+    height: 52px;
+    text-align: center;
+    align-content: center;
+    justify-content: space-between
+}
+
+.nav_left {
+    display: flex;
+    align-items: center;
+
+}
+
+.nav_search {
+    background-color: #EDF3F8;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    height: 35px;
+    margin-left: 5px
+}
+
+.nav_search input {
+    border: none;
+    outline: none;
+    background: none;
+
+}
+
+.utente {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nav_right svg {
+    fill: rgb(57, 57, 57)
+}
+
+.nav_right p {
+    color: gray;
+    margin: 0;
+}
+
+.nav_right>div {
+    width: 80px;
+    font-size: 13px;
+}
+
+.svg_div {
+    width: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.profile_pic {
+    display: flex;
+    justify-content: center;
+}
+
+#dropdown-menu-align-end {
+    border: none;
+    background: white;
+    color: gray;
+    font-size: 12px;
+    padding: 0;
+    overflow: hidden;
+    padding-inline: 5px;
+
+}
+
+
+.inner-dropdown {
+    overflow: hidden;
+}
+
+.profile_pic_dd {
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-inline-start: 10px;
+}
+
+.dd_aziende {
+    text-align: center;
+    border-left: 1px solid rgb(228, 228, 228);
+}
+
+.dd_aziende svg {
+    fill: rgb(57, 57, 57)
+}
+
+.dd_aziende p {
+    color: gray;
+    margin: 0;
+    font-size: 13px;
+}
+
+.dd_aziende>div {
+    width: 114px;
+
+}
+
+@media screen and (max-width: 767px) {
+    .nav_search>input {
+        display: none
+    }
+
+}
+
+.navbar_div svg {
+    fill: gray;
+}
+
+.navbar_div p {
+    color: gray;
+}
+
+.nav_right div:hover {
+    cursor: pointer;
+
+    p {
+        color: rgb(50, 50, 50)
+    }
+
+    svg {
+        fill: rgb(50, 50, 50);
+    }
+
+    ;
+}
+
+@media screen and (max-width: 991px){
+    .textNav{
+        display: none;
+    }
+    .iconPadding{
+        padding-top: 0.7em;
+    }
+    .nav_right>div {
+        width: 4.5em;
+        font-size: 13px;
+    }
+}
+header {
   position: sticky;
   top: 0;
   height: 53px;
@@ -156,21 +309,6 @@ header {
   }
 }
 
-    
-}
-
-@media screen and (max-width: 991px){
-    .textNav{
-        display: none;
-    }
-    .iconPadding{
-        padding-top: 0.7em;
-    }
-    .nav_right>div {
-        width: 4.5em;
-        font-size: 13px;
-    }
-}
 .nav_premium {
   color: rgb(212, 155, 48);
   text-decoration: underline;
@@ -181,11 +319,7 @@ header {
     .textNav{
         display: none;
     }
-    .iconPadding{
-        padding-top: 0.7em;
-    }
-    .nav_right>div {
-        width: 4.5em;
-        font-size: 13px;
+    .iconNav{
+        width: 1em;
     }
 }
