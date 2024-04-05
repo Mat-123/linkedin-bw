@@ -111,3 +111,23 @@ export const saveProfile = (formData) => {
       });
   };
 };
+
+export const getPosts = () => {
+  return fetch("https://striveschool-api.herokuapp.com/api/posts/", {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBiYzRlZGEyODFkODAwMTlhM2VjNTIiLCJpYXQiOjE3MTIwNDczNDEsImV4cCI6MTcxMzI1Njk0MX0._hbN8joRmo0ilM2j3j5Be52RH2nTsa2Ys4TZJvVoaUw",
+    },
+  })
+    .then((resp) => {
+      if (resp.ok) {
+        return resp.json();
+      } else {
+        throw new Error("Errore nel recupero libri");
+      }
+    })
+    .catch((error) => {
+      console.log("ERRORE", error);
+    });
+};
