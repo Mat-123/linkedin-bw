@@ -45,6 +45,7 @@ function AllExperiences() {
   const handleEditExperience = (experience) => {
     setSelectedExperience(experience);
     setShowModal(true);
+    fetchExperiences();
   };
 
   const handleCloseModal = () => {
@@ -56,6 +57,7 @@ function AllExperiences() {
     console.log("Esperienza aggiornata:", updatedExperience);
     setShowModal(false);
     setSelectedExperience(null);
+    fetchExperiences();
   };
 
   const handleDeleteExperience = async (expId) => {
@@ -64,6 +66,27 @@ function AllExperiences() {
       setExperiences((prevExperiences) => prevExperiences.filter((exp) => exp._id !== expId));
     } catch (error) {
       console.error("Si è verificato un errore durante la cancellazione dell'esperienza:", error);
+    }
+  };
+
+  const fetchExperiences = async () => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
+        method: "GET",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBlYzVmYjEzZGYwYTAwMTk0OWY1OGIiLCJpYXQiOjE3MTIyNDQyMTksImV4cCI6MTcxMzQ1MzgxOX0.rFL8x1EdBXk5cXLx5V1jW6V2YTHy_0lLODn5-0_z7KE",
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setExperiences(data);
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
   };
 
