@@ -29,7 +29,7 @@ const LeftSidebar = () => {
       <div className="leftsidebar bg-white rounded-top overflow-hidden">
         <div className="leftsidebar_header mb-4">
           <div className="bg-image">
-            <img src={sfondo} alt="" className="object-fit-cover" />
+            <img src={sfondo} alt="" className="object-fit-cover sfondo" />
           </div>
           <div className="sidebarleft_imgProfile">
             <img src={user.image} alt="" />
@@ -37,20 +37,20 @@ const LeftSidebar = () => {
         </div>
 
         <div className="info text-center ">
-          <h4 className="mb-2">
+          <h4 className="mb-2 fs16">
             {user.name} {user.surname}
           </h4>
 
-          <p className="leftsidebar_bio text-black-50">{user.bio}</p>
+          <p className="leftsidebar_bio text-black-50 fs12">{user.bio}</p>
         </div>
         {/* ------------MOSTRA DI PIU ------------ */}
       </div>
       <div className={isActive ? "hidden-area" : null}>
         <div className="hidden_dettagli leftsidebar bg-white rounded-bottom overflow-hidden">
           <hr className="text-black-50" />
-          <div className="collegamenti fw-bold ps-3">
+          <div className="collegamenti roboto-medium ps-3">
             <div className=" d-flex align-items-center">
-              <p className="me-3 text-black-50  ">Collegamenti</p>
+              <p className="me-3 text-black-50 fs12 ">Collegamenti</p>
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,12 +68,12 @@ const LeftSidebar = () => {
                 </svg>
               </div>
             </div>
-            <p className="me-3 text-muted ">Espandi la tua rete</p>
+            <p className="me-3 text-muted fs12">Espandi la tua rete</p>
           </div>
           <hr className="text-black-50" />
           <div className="premium ps-3">
-            <p className="leftsidebar_bio text-black-50">Accedi a strumenti e informazioni in esclusiva</p>
-            <p className="me-3 text-muted fw-bold">Prova premium per 0 EUR</p>
+            <p className="leftsidebar_bio text-black-50  fs12">Accedi a strumenti e informazioni in esclusiva</p>
+            <p className="me-3 text-muted roboto-medium  fs12">Prova premium per 0 EUR</p>
           </div>
           <hr className="text-black-50" />
 
@@ -90,16 +90,16 @@ const LeftSidebar = () => {
                 <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
               </svg>
             </div>
-            <p className="me-3 text-muted fw-bold ps-1">I miei elementi</p>
+            <p className=" fs12 me-3 text-muted roboto-medium ps-1">I miei elementi</p>
           </div>
         </div>
         <div className="leftsidebar bg-white rounded mt-2 py-3">
-          <p className="me-3 text-primary fw-bold ps-3 pb-3">Gruppi</p>
-          <p className="me-3 text-primary fw-bold ps-3 pb-3">Eventi</p>
-          <p className="me-3 text-primary fw-bold ps-3 pb-3">Hashtag seguiti</p>
+          <p className=" fs12 me-3 text-primary roboto-medium ps-3 pb-3">Gruppi</p>
+          <p className=" fs12 me-3 text-primary roboto-medium ps-3 pb-3">Eventi</p>
+          <p className=" fs12 me-3 text-primary roboto-medium ps-3 pb-3">Hashtag seguiti</p>
           <hr className="text-black-50" />
           <div className="text-center">
-            <h3 className="text-black-50">Scopri di più</h3>
+            <h3 className="text-black-50 fs14">Scopri di più</h3>
           </div>
         </div>
       </div>

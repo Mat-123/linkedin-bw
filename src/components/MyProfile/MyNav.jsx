@@ -183,7 +183,7 @@ function MyNav() {
                   </div>
                 </div>
                 <DropdownButton align="end" title="Me" id="dropdown-menu-align-end">
-                  <div className="inner-dropdown ">
+                  <div className="inner-dropdown fs14 ">
                     <Dropdown.Item eventKey="3" className="d-flex">
                       <Link style={{ textDecoration: "none" }} className="w-100 d-flex align-items-center" to={"/me"}>
                         <div className="profile_pic_dd">
@@ -191,7 +191,7 @@ function MyNav() {
                         </div>
                         <div>
                           {/* <h6 className="text-muted">Il mio nome</h6> */}
-                          <h3 className="text-muted">
+                          <h3 className="fs16 text-muted">
                             {user.name} {user.surname}
                           </h3>
                           {/* <p>Istruzione o impiego attuale</p> */}
@@ -201,7 +201,7 @@ function MyNav() {
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item eventKey="1">
-                      <h6>Account</h6>
+                      <h6 className="fs16">Account</h6>
                     </Dropdown.Item>
 
                     <Dropdown.Item eventKey="2">
@@ -214,7 +214,7 @@ function MyNav() {
                     <Dropdown.Item eventKey="3">Lingua</Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item eventKey="1">
-                      <h6>Gestisci</h6>
+                      <h6 className="fs16">Gestisci</h6>
                     </Dropdown.Item>
                     <Dropdown.Item eventKey="4">Post e attività</Dropdown.Item>
                     <Dropdown.Item eventKey="4">Account per la pubblicazione di offerte</Dropdown.Item>

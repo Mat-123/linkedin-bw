@@ -5,7 +5,7 @@ import { Cursor } from "react-bootstrap-icons";
 
 function Analyses() {
   return (
-    <Card style={{ width: "auto" }} className="whiteBck mb-1 p-0">
+    <Card style={{ width: "auto" }} className="whiteBck mb-2 p-0">
       <Card.Body>
         <Card.Title className="mb-2 text-muted text-start">Analisi</Card.Title>
         <Card.Subtitle className="mb-2 text-muted text-start">

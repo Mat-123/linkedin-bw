@@ -57,28 +57,28 @@ const RightSidebar = () => {
           </div>
         </div>
         <div className="first-news mt-0">
-          <ul className="fw-semibold lh-md p-4 sidebar-list mb-0 pb-1">
+          <ul className="roboto-medium lh-md p-4 sidebar-list mb-0 pb-1">
             <li>
-              Quali confini tra vita e lavoro <p className="sidebar-dx mb-2">Notizie principali</p>
+              Quali confini tra vita e lavoro <p className="sidebar-dx mb-2 fs16">Notizie principali</p>
             </li>
 
-            <li>
+            <li className="fs14">
               Lamborghini ritocca il logo <p className="sidebar-dx mb-2">1 giorno fa</p>
             </li>
 
-            <li>
+            <li className="fs14">
               Canva ci aggiunge Affinity <p className="sidebar-dx mb-2">7 giorni fa</p>
             </li>
 
-            <li>
+            <li className="fs14">
               Worldpay integra Satispay <p className="sidebar-dx mb-2">20 ore fa</p>
             </li>
 
-            <li>
+            <li className="fs14">
               Private equity in frenata <p className="sidebar-dx mb-2">4 giorni fa</p>
             </li>
             {!showSecondNews && (
-              <button className="btn-vedi-altro fw-semibold" onClick={toggleSecondNews}>
+              <button className="btn-vedi-altro roboto-medium" onClick={toggleSecondNews}>
                 Vedi altro
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ const RightSidebar = () => {
 
         {showSecondNews && (
           <div className="second-news mt-0">
-            <ul className="fw-semibold lh-md p-4 sidebar-list mb-0 mt-0 pt-0">
+            <ul className="roboto-medium lh-md p-4 sidebar-list mb-0 mt-0 pt-0">
               <li>
                 Più sfide per la cybersicurezza <p className="sidebar-dx mb-2">4 giorni fa</p>
               </li>
@@ -118,7 +118,7 @@ const RightSidebar = () => {
                 Azimut avrà la sua banca digitale <p className="sidebar-dx mb-2">4 giorni fa</p>
               </li>
               {showSecondNews && (
-                <button className="btn-vedi-altro fw-semibold" onClick={toggleLessDetails}>
+                <button className="btn-vedi-altro roboto-medium" onClick={toggleLessDetails}>
                   Meno dettagli
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

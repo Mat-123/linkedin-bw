@@ -173,7 +173,7 @@ function AddPostModal() {
             </svg>
           </Button>
           <Button variant="primary" onClick={handleSubmit}>
-            Save Changes
+            Invia
           </Button>
         </Modal.Footer>
       </Modal>
