@@ -104,7 +104,7 @@ const Post = (props) => {
         </div>
       </div>
 
-      <div className="card-bottom">
+      <div className="card-bottom d-flex flex-column">
         <p className="fs14 nome">{props.infoPost.text}</p>
         {/* <img src={props.infoPost.image ? props.infoPost.image : ""} alt="" /> */}
         {/* img post */}
