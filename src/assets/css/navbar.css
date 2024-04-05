@@ -10,30 +10,28 @@ header {
   height: 52px;
   text-align: center;
   align-content: center;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .nav_left {
   display: flex;
   align-items: center;
-
 }
 
 .nav_search {
-  background-color: #EDF3F8;
+  background-color: #edf3f8;
   padding: 10px;
   display: flex;
   align-items: center;
   border-radius: 5px;
   height: 35px;
-  margin-left: 5px
+  margin-left: 5px;
 }
 
 .nav_search input {
   border: none;
   outline: none;
   background: none;
-
 }
 
 .utente {
@@ -42,7 +40,7 @@ header {
 }
 
 .nav_right svg {
-  fill: rgb(57, 57, 57)
+  fill: rgb(57, 57, 57);
 }
 
 .nav_right p {
@@ -50,7 +48,7 @@ header {
   margin: 0;
 }
 
-.nav_right>div {
+.nav_right > div {
   width: 80px;
   font-size: 13px;
 }
@@ -60,7 +58,6 @@ header {
   border-radius: 50%;
   overflow: hidden;
 }
-
 
 .profile_pic {
   display: flex;
@@ -75,9 +72,7 @@ header {
   padding: 0;
   overflow: hidden;
   padding-inline: 5px;
-
 }
-
 
 .inner-dropdown {
   overflow: hidden;
@@ -87,7 +82,6 @@ header {
   width: 60px;
   border-radius: 50%;
   overflow: hidden;
-
 }
 
 .dd_aziende {
@@ -96,7 +90,7 @@ header {
 }
 
 .dd_aziende svg {
-  fill: rgb(57, 57, 57)
+  fill: rgb(57, 57, 57);
 }
 
 .dd_aziende p {
@@ -105,16 +99,14 @@ header {
   font-size: 13px;
 }
 
-.dd_aziende>div {
+.dd_aziende > div {
   width: 114px;
-
 }
 
 @media screen and (max-width: 767px) {
-  .nav_search>input {
-    display: none
+  .nav_search > input {
+    display: none;
   }
-
 }
 
 .navbar_div svg {
@@ -129,14 +121,12 @@ header {
   cursor: pointer;
 
   p {
-    color: rgb(50, 50, 50)
+    color: rgb(50, 50, 50);
   }
 
   svg {
     fill: rgb(50, 50, 50);
   }
-
-  ;
 }
 
 @media screen and (max-width: 991px) {
@@ -148,7 +138,7 @@ header {
     padding-top: 0.7em;
   }
 
-  .nav_right>div {
+  .nav_right > div {
     width: 4.5em;
     font-size: 13px;
   }
@@ -216,7 +206,6 @@ header {
   border-radius: 50%;
   overflow: hidden;
   margin-right: 5px;
-
 }
 
 .nav_links {
@@ -229,7 +218,6 @@ header {
 .utente {
   width: 80px;
   font-size: 13px;
-
 }
 
 .svg_div {
@@ -237,7 +225,6 @@ header {
   border-radius: 50%;
   overflow: hidden;
 }
-
 
 .profile_pic {
   display: flex;
@@ -281,12 +268,12 @@ header {
   font-size: 13px;
 }
 
-.dd_aziende>div {
+.dd_aziende > div {
   width: 114px;
 }
 
 @media screen and (max-width: 1024px) {
-  .nav_search>input {
+  .nav_search > input {
     display: none;
   }
 
@@ -302,7 +289,6 @@ header {
 }
 
 @media screen and (max-width: 852px) {
-
   .nav_right p,
   .nav_search p {
     display: none;
@@ -358,5 +344,5 @@ header {
 
 .avatar_dd {
   width: 60px;
-  height: 60px
+  height: 60px;
 }

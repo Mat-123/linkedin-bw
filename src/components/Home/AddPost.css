@@ -49,7 +49,6 @@ input[type="text"] {
   background-color: #f0f0f0;
 }
 
-
 /* MODAL POST */
 .post_imgProfile {
   width: 56px;
@@ -59,14 +58,12 @@ input[type="text"] {
 
 .post_imgProfile img {
   height: 56px;
-
 }
 
 .modal-dialog {
   max-width: 744px;
   margin: 0;
   margin-inline: auto;
-
 }
 
 .modal-content {
@@ -86,7 +83,7 @@ input[type="text"] {
 }
 
 .post-icons svg {
-  fill: rgb(87, 85, 85)
+  fill: rgb(87, 85, 85);
 }
 
 .btn_clock {
@@ -101,11 +98,14 @@ input[type="text"] {
   border: none;
 }
 
-
 .btn_clock:hover {
   background-color: rgb(242, 242, 242);
 }
 
 .btn_clock svg {
   fill: rgb(84, 84, 84);
+}
+
+.like {
+  margin-top: 2px;
 }

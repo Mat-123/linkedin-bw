@@ -18,7 +18,6 @@ const Post = (props) => {
   // const [selected, setSelected] = useState(false);
   const [arrNumComm, setArrNumComm] = useState([]);
 
-
   const [click, setClick] = useState(false);
 
   const [selected, setSelected] = useState("");
@@ -73,21 +72,13 @@ const Post = (props) => {
   let provadata = props.infoPost.createdAt.slice(0, 10);
   // console.log('vera data', provadata)
 
-
   return (
     <div className="card my-2">
       <div className="card-top">
         <div className="profile-icon flex-grow-0">
           {/* Icona circolare del profilo */}
           <Link to={"/utente/" + props.infoPost.user._id}>
-            <img
-              src={
-                props.infoPost.image
-                  ? props.infoPost.image
-                  : props.infoPost.user.image
-              }
-              alt="Profile Icon"
-            />
+            <img src={props.infoPost.image ? props.infoPost.image : props.infoPost.user.image} alt="Profile Icon" />
             {console.log("post dati", props.infoPost)}
           </Link>
         </div>
@@ -123,9 +114,7 @@ const Post = (props) => {
           className="rel"
           onClick={() => {
             setClick(true);
-            const found = comments.filter(
-              (element) => element.elementId === props.infoPost._id
-            );
+            const found = comments.filter((element) => element.elementId === props.infoPost._id);
             // console.log("commenti trovati", found);
             if (found.length !== 0) {
               setArrNumComm(found);
@@ -144,8 +133,8 @@ const Post = (props) => {
             }
           }}
         >
-          <img src={likeRed} alt="" className="abs" />
-          <img src={likeBlu} alt="" />
+          <img src={likeRed} alt="" className="abs me-1" />
+          <img src={likeBlu} alt="" className="like" />
         </div>
       </div>
       <div className="d-flex  b-sopra">
@@ -153,10 +142,7 @@ const Post = (props) => {
           <img src={like} alt="" style={{ height: "1em" }} className="px-2" />
           <p className="fs14 roboto-medium">Consiglia</p>
         </div>
-        <div
-          className="d-flex  flex-wrap align-items-center px-2 py-2 nome"
-          onClick={handleCommentClick}
-        >
+        <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome" onClick={handleCommentClick}>
           <img src={comment} alt="" className="px-2" />
           <p className="fs14 roboto-medium">Commenta</p>
         </div>
@@ -171,12 +157,12 @@ const Post = (props) => {
       </div>
       {showAddComment && <AddComment />}
       {click && (
-          <div className="card noBord">
-            {arrNumComm.map((singoloCommento, i) => {
-              return <Comments array={singoloCommento} key={i} />;
-            })}
-          </div>
-        )}
+        <div className="card noBord">
+          {arrNumComm.map((singoloCommento, i) => {
+            return <Comments array={singoloCommento} key={i} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };
