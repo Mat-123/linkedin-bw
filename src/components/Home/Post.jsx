@@ -72,8 +72,8 @@ const Post = (props) => {
         {/* <img src={props.infoPost.user.image} alt="" /> */}
         {/* like e num commenti */}
         <div className="rel">
-          <img src={likeRed} alt="" className="abs" />
-          <img src={likeBlu} alt="" />
+          <img src={likeRed} alt="" className="abs me-3" />
+          <img src={likeBlu} alt="" className="me-1" />
         </div>
       </div>
       <div className="d-flex  b-sopra">
@@ -87,7 +87,7 @@ const Post = (props) => {
         </div>
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
           <img src={share} alt="" className="px-2" />
-          <p className="fs14  flex-wrap roboto-medium">Diffondi il post</p>
+          <p className="fs14  flex-wrap roboto-medium">Diffondi</p>
         </div>
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
           <img src={send} alt="" className="px-2" />
