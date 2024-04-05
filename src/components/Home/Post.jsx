@@ -76,7 +76,7 @@ const Post = (props) => {
           <img src={likeBlu} alt="" className="me-1" />
         </div>
       </div>
-      <div className="d-flex  b-sopra">
+      <div className="d-flex  b-sopra justify-content-center gap-2">
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
           <img src={like} alt="" style={{ height: "1em" }} className="px-2" />
           <p className="fs14 roboto-medium">Consiglia</p>
