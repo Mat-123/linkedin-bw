@@ -95,20 +95,22 @@ function Experiences() {
               {limitedExperiences.map((experience, index) => (
                 <Col xs={12} key={experience._id}>
                   <div>
-                    <img src={experience.image} alt="" />
-                  </div>
-                  <div>
                     <Card
                       style={{ width: "100%" }}
                       className="m-1 h-100 border-start-0 border-end-0 border-bottom-0 rounded-0"
                     >
-                      <div>
-                        <h6>{experience.role}</h6>
-                        <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
-                        <Card.Text>
-                          {experience.startDate.split("-")[0]} -{" "}
-                          {experience.endDate ? experience.endDate.split("-")[0] : "Presente"}
-                        </Card.Text>
+                      <div className="d-flex flex-row">
+                        <div>
+                          <img src={experience.image} alt="" className="me-2" />
+                        </div>
+                        <div>
+                          <h6>{experience.role}</h6>
+                          <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
+                          <Card.Text>
+                            {experience.startDate.split("-")[0]} -{" "}
+                            {experience.endDate ? experience.endDate.split("-")[0] : "Presente"}
+                          </Card.Text>
+                        </div>
                       </div>
                     </Card>
                   </div>
