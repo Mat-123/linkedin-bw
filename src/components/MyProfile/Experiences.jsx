@@ -103,7 +103,7 @@ function Experiences() {
                     >
                       <div className="d-flex flex-row">
                         <div>
-                          <img src={experience.image} alt="" className="me-2" />
+                          <img src={experience.image} alt="" className="me-2" style={{ width: "80px" }} />
                         </div>
                         <div>
                           <h6>{experience.role}</h6>
