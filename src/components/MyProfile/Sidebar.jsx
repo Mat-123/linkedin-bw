@@ -34,8 +34,16 @@ const Sidebar = () => {
         // ma dispatcho un'azione trasportando i libri ottenuti
 
         console.log("dati fetch", fetchProfiles);
-        let arrProfile = fetchProfiles;
-        let arrSlice = arrProfile.slice(0, 5);
+        // RANDOM SLICE
+        const copyFetchArr = fetchProfiles;
+        var shuffled = copyFetchArr.sort(function () {
+          return 0.5 - Math.random();
+        });
+        var arrSlice = shuffled.slice(0, 5);
+        // FINE RANDOM SLICE
+        // let arrProfile = fetchProfiles;
+
+        // let arrSlice = arrProfile.slice(0, 5);
         setProfiles(arrSlice);
       })
       .catch((error) => {

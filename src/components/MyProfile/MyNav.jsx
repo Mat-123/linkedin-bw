@@ -3,14 +3,15 @@ import logo from "../../assets/icons/linkedin.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/navbar.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Display } from "react-bootstrap-icons";
+import { Link, useNavigate } from "react-router-dom";
+// import { Display } from "react-bootstrap-icons";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions";
 
 function MyNav() {
   const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -25,6 +26,14 @@ function MyNav() {
     console.log("dispatch fatto profilo personale");
     console.log("user", user);
   }, []);
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
+  if (window.location.pathname === "/login") {
+    return null;
+  }
 
   return (
     <header>
@@ -73,7 +82,7 @@ function MyNav() {
           <div className="d-flex">
             <div className="nav_right d-flex">
               <Link style={{ textDecoration: "none" }} className="nav_links" to={"/"}>
-                <div className="home_icon">
+                <div className="home_icon position-relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -85,6 +94,9 @@ function MyNav() {
                   >
                     <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
                   </svg>
+                  <span class="position-absolute top-0 start-75 translate-middle p-2 bg-danger border border-light rounded-circle mt-1">
+                    <span class="visually-hidden">New alerts</span>
+                  </span>
                 </div>
                 <p>Home</p>
               </Link>
@@ -137,7 +149,7 @@ function MyNav() {
                 <p>Messaggistica</p>
               </Link>
               <Link style={{ textDecoration: "none" }} className="nav_links" to={"/notifications"}>
-                <div className="notifications_icon">
+                <div className="notifications_icon position-relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -149,6 +161,9 @@ function MyNav() {
                   >
                     <path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"></path>
                   </svg>
+                  <span class="position-absolute top-0 start-75 translate-middle badge rounded-pill bg-danger mt-1">
+                    5<span class="visually-hidden">unread messages</span>
+                  </span>
                 </div>
                 <p>Notifiche</p>
               </Link>
@@ -219,9 +234,10 @@ function MyNav() {
                     <Dropdown.Item eventKey="4">Post e attività</Dropdown.Item>
                     <Dropdown.Item eventKey="4">Account per la pubblicazione di offerte</Dropdown.Item>
                     <Dropdown.Divider />
-                    {/* <Link to={"/login"}> */}
-                    <Dropdown.Item eventKey="4">Esci</Dropdown.Item>
-                    {/* </Link> */}
+
+                    <Dropdown.Item eventKey="4" onClick={handleLogout}>
+                      Esci
+                    </Dropdown.Item>
                   </div>
                 </DropdownButton>
               </div>

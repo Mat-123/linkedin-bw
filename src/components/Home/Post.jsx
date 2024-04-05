@@ -9,10 +9,13 @@ import likeBlu from "./icon post/like-blue.svg";
 import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import AddComment from "./AddComment";
 
 import Comments from "./Comments";
 
 const Post = (props) => {
+  const [showAddComment, setShowAddComment] = useState(false);
+
   // stato post selezionato
   const [selected, setSelected] = useState("");
   // stato che memorizza commenti
@@ -69,6 +72,10 @@ const Post = (props) => {
   // console.log('ora slice', ora)
   let provadata = props.infoPost.createdAt.slice(0, 10);
   // console.log('vera data', provadata)
+
+  const handleCommentClick = () => {
+    setShowAddComment(!showAddComment);
+  };
 
   return (
     <>
@@ -127,8 +134,8 @@ const Post = (props) => {
           {/* <img src={props.infoPost.user.image} alt="" /> */}
           {/* like e num commenti */}
           <div className="rel ms-auto">
-            <img src={likeRed} alt="" className="abs" />
-            <img src={likeBlu} alt="" />
+            <img src={likeRed} alt="" className="abs me-3" />
+            <img src={likeBlu} alt="" className="me-1" />
           </div>
           <p
             className="fs14 nome"
@@ -158,24 +165,25 @@ const Post = (props) => {
             {{ arrNumComm } ? arrNumComm.length + "Commenti" : "0 Commenti"}
           </p>
         </div>
-        <div className="d-flex  b-sopra">
+        <div className="d-flex  b-sopra justify-content-center gap-2">
           <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
             <img src={like} alt="" style={{ height: "1em" }} className="px-2" />
             <p className="fs14 roboto-medium">Consiglia</p>
           </div>
-          <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
+          <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome" onClick={handleCommentClick}>
             <img src={comment} alt="" className="px-2" />
             <p className="fs14 roboto-medium">Commenta</p>
           </div>
           <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
             <img src={share} alt="" className="px-2" />
-            <p className="fs14  flex-wrap roboto-medium">Diffondi il post</p>
+            <p className="fs14  flex-wrap roboto-medium">Diffondi</p>
           </div>
           <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
             <img src={send} alt="" className="px-2" />
             <p className="fs14 roboto-medium">Invia</p>
           </div>
         </div>
+      {showAddComment && <AddComment />}
         {click && (
           <div className="card noBord">
             {arrNumComm.map((singoloCommento, i) => {

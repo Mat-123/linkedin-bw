@@ -5,6 +5,8 @@ import Modal from "react-bootstrap/Modal";
 import "./AddPost.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 
 function AddPostModal() {
   // PRENDE PROFILO
@@ -79,13 +81,17 @@ function AddPostModal() {
           </div>
         </Modal.Header>
         <Modal.Body>
-          <input
-            id="myText"
-            type="text"
-            style={{ border: "none", background: "transparent", outline: 0, maxHeight: "500px" }}
-            placeholder="Di cosa vuoi parlare?"
-            onChange={(e) => (postText = e.target.value)}
-          />
+          <FloatingLabel controlId="floatingTextarea2" label="Di cosa vuoi parlare?">
+            <Form.Control
+              as="textarea"
+              placeholder="Di cosa vuoi parlare?"
+              id="myText"
+              type="text"
+              style={{ border: "none", background: "transparent", outline: 0, height: "300px", width: "100%" }}
+              onChange={(e) => (postText = e.target.value)}
+            />
+          </FloatingLabel>
+
           {/* SMILEY */}
           <div className="ps-4 py-5">
             <svg

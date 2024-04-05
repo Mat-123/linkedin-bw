@@ -73,7 +73,19 @@ function App() {
                 </>
               }
             />
-            <Route path="/me/all-experiences/:userId" element={<AllExperiences />} />
+            <Route
+              path="/me/all-experiences/:userId"
+              element={
+                <>
+                  <Row>
+                    <Col xs="12" md="8" className="mx-auto">
+                      <AllExperiences />
+                    </Col>
+                  </Row>
+                  <FooterComponent />
+                </>
+              }
+            />
             <Route
               path="/utente/:utente"
               element={
