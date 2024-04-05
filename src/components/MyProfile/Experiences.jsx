@@ -11,6 +11,7 @@ function Experiences() {
   const userId = user._id;
   const [experiences, setExperiences] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [totalExperiences, setTotalExperiences] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -29,6 +30,7 @@ function Experiences() {
       if (response.ok) {
         const data = await response.json();
         setExperiences(data);
+        setTotalExperiences(data.length);
       } else {
         console.error("Failed to fetch data");
       }
@@ -122,7 +124,7 @@ function Experiences() {
 
         {experiences.length > 2 && (
           <Card.Footer className="text-center text-decoration-none" style={{ cursor: "pointer" }}>
-            <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze →</Link>
+            <Link to={`/me/all-experiences/${userId}`}>Mostra tutte le Esperienze ({totalExperiences}) →</Link>
           </Card.Footer>
         )}
       </Card>
