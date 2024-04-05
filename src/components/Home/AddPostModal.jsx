@@ -55,10 +55,10 @@ function AddPostModal(props) {
   return (
     <>
       {props.editable ? (
-        <div className="ms-auto" onClick={handleShow}>
+        <div className="ms-auto pen_icon" onClick={handleShow}>
           <svg
-            width="18"
-            height="18"
+            width="14"
+            height="14"
             viewBox="0 0 16 16"
             fill="#191919"
             xmlns="http://www.w3.org/2000/svg"

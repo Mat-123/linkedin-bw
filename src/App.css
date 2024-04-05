@@ -64,3 +64,39 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
+.trash_icon {
+  padding: 4px;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.trash_icon:hover {
+  color: rgb(203, 46, 46);
+  background-color: #c4c4c4;
+  border-radius: 4px;
+}
+
+.pen_icon:hover {
+  color: rgb(53, 53, 199);
+  background-color: #c4c4c4;
+  border-radius: 4px;
+}
+
+.pen_icon {
+  padding: 4px;
+  cursor: pointer;
+}
+
+.put_del {
+  display: flex;
+  align-items: center;
+  margin-inline-start: auto;
+}
+
+.toast_abs {
+  position: fixed;
+  top: 50px;
+  right: 8px;
+}
