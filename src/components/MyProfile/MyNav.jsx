@@ -31,6 +31,10 @@ function MyNav() {
     navigate("/login");
   };
 
+  if (window.location.pathname === "/login") {
+    return null;
+  }
+
   return (
     <header>
       <Container fluid="xl">
