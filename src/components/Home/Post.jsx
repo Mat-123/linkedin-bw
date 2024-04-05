@@ -84,7 +84,6 @@ const Post = (props) => {
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome" onClick={handleCommentClick}>
           <img src={comment} alt="" className="px-2" />
           <p className="fs14 roboto-medium">Commenta</p>
-          {setShowAddComment && <AddComment />}
         </div>
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
           <img src={share} alt="" className="px-2" />
@@ -95,6 +94,7 @@ const Post = (props) => {
           <p className="fs14 roboto-medium">Invia</p>
         </div>
       </div>
+      {showAddComment && <AddComment />}
     </div>
   );
 };
