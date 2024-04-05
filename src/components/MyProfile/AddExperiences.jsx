@@ -36,8 +36,8 @@ const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setExpId(data._id); // Set expId after successful experience creation
-        uploadImage(); // Call function to upload image after setting expId
+        setExpId(data._id);
+        uploadImage();
       } else {
         console.error("Errore durante l'invio dei dati");
       }
@@ -69,8 +69,7 @@ const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
       );
 
       if (response.ok) {
-        handleClose();
-        updateExperiences();
+        handleClose(); // Chiudi il modal dopo il caricamento dell'immagine
         setFormData({
           role: "",
           company: "",
@@ -78,7 +77,7 @@ const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
           endDate: "",
           description: "",
         });
-        setImageFile(null); // Clear image file state after uploading
+        setImageFile(null);
       } else {
         console.error("Errore durante l'invio dell'immagine");
       }

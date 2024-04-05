@@ -15,13 +15,15 @@ const Comments = (props) => {
   let otherUser = useSelector((state) => state.otherProfile.other); // l'utenti nel Redux Store
   // console.log('altri profili', otherUser)
 
-  const objtoarr = Object.values(otherUser)
-  console.log('prova trasformazione', objtoarr)
+  const objtoarr = Object.values(otherUser);
+  console.log("prova trasformazione", objtoarr);
   // if (otherUser) {
   //   setUsers(otherUser);
-   
-    const trovato =  objtoarr.find((element) => element.username === props.array.author);
-    console.log("utente trovato", trovato);
+
+  const trovato = objtoarr.find(
+    (element) => element.username === props.array.author
+  );
+  console.log("utente trovato", trovato);
   // }
 
   let data = props.array.createdAt.slice(11);
@@ -34,18 +36,11 @@ const Comments = (props) => {
     <>
       <div className="profile-icon">
         {/* Icona circolare del profilo */}
-        <Link to={"/utente/" + trovato._id}>
-        <img
-          src={
-            trovato.image
-                ? trovato.image
-                : 
-            
-            ``
-          }
-          alt="Profile Icon"
-        />
-        </Link>
+        {trovato && (
+          <Link to={"/utente/" + trovato._id}>
+            <img src={trovato.image ? trovato.image : ``} alt="Profile Icon" />
+          </Link>
+        )}
       </div>
       <div className="bordComment py-2 pe-1">
         <div className="d-flex">
@@ -54,10 +49,12 @@ const Comments = (props) => {
             {ora} {provadata}
           </p>
         </div>
+        {trovato && (
+          <p className="fs12" style={{ color: "#666666" }}>
+            {trovato.bio ? trovato.bio : ""}
+          </p>
+        )}
 
-        <p className="fs12" style={{ color: "#666666" }}>
-          {trovato.bio ? trovato.bio : ""}
-        </p>
         <p className="fs14 nome">{props.array.comment}</p>
         <p className="fs12" style={{ color: "#666666" }}>
           {props.array.rate}
