@@ -4,24 +4,25 @@ import { getOtherProfile } from "../../redux/actions";
 import { useState, useEffect } from "react";
 
 const Comments = (props) => {
-  const [users, setUsers] =useState([])
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
-  // useEffect(()=>{
-  //     dispatch(getOtherProfile());
-  //     console.log("dispatch per cercare utenti");
-  // },[])
 
-  // const otherUser = useSelector((state) => state.otherProfile.other); // l'utenti nel Redux Store
-  // console.log("altri utenti", otherUser);
-  // const foundUser = otherUser.find(
-  //   (element) => element.username === props.array.author
-  // );
-  // console.log('utente trovato', foundUser)
-  // console.log('commento autore', props.array.author)
+  useEffect(() => {
+    dispatch(getOtherProfile());
+    console.log("dispatch per cercare utenti");
+  }, []);
 
+  let otherUser = useSelector((state) => state.otherProfile.other); // l'utenti nel Redux Store
+  // console.log('altri profili', otherUser)
 
-
-
+  const objtoarr = Object.values(otherUser)
+  console.log('prova trasformazione', objtoarr)
+  // if (otherUser) {
+  //   setUsers(otherUser);
+   
+    const trovato =  objtoarr.find((element) => element.username === props.array.author);
+    console.log("utente trovato", trovato);
+  // }
 
   let data = props.array.createdAt.slice(11);
   // console.log('data slice', data)
@@ -33,30 +34,30 @@ const Comments = (props) => {
     <>
       <div className="profile-icon">
         {/* Icona circolare del profilo */}
-        {/* <Link to={"/utente/" + foundUser._id}> */}
-        {/* <img
+        <Link to={"/utente/" + trovato._id}>
+        <img
           src={
-            foundUser.image
-                ? foundUser.image
+            trovato.image
+                ? trovato.image
                 : 
             
             ``
           }
           alt="Profile Icon"
-        /> */}
-        {/* </Link> */}
+        />
+        </Link>
       </div>
       <div className="bordComment py-2 pe-1">
         <div className="d-flex">
-        <p className="fs14 nome roboto-medium">{props.array.author}</p>
-        <p className="fs12 ms-auto" style={{ color: "#666666" }}>
-          {ora} {provadata}
-        </p>
+          <p className="fs14 nome roboto-medium">{props.array.author}</p>
+          <p className="fs12 ms-auto" style={{ color: "#666666" }}>
+            {ora} {provadata}
+          </p>
         </div>
-        
-        {/* <p className="fs12" style={{ color: "#666666" }}>
-          {foundUser.bio ? foundUser.bio : ""}
-        </p> */}
+
+        <p className="fs12" style={{ color: "#666666" }}>
+          {trovato.bio ? trovato.bio : ""}
+        </p>
         <p className="fs14 nome">{props.array.comment}</p>
         <p className="fs12" style={{ color: "#666666" }}>
           {props.array.rate}

@@ -59,18 +59,18 @@ export const getOtherProfile = (parametro) => {
         if (resp.ok) {
           return resp.json();
         } else {
-          throw new Error("Errore nel recupero libri");
+          throw new Error("Errore nel recupero profili");
         }
       })
       .then((fetchProfile) => {
         console.log("GETSTATE, SECONDO PARAMETRO DELLA FUNZIONE ASINCRONA", getState());
         //   setBooks(fetchedBooks) // non setto più uno stato locale!
         // ma dispatcho un'azione trasportando i libri ottenuti
-        let image = fetchProfile.image || "ghost_person.png";
-        let fetchProfileCopy = { ...fetchProfile, image: image };
+        // let image = fetchProfile.image || "ghost_person.png";
+        // let fetchProfileCopy = { ...fetchProfile, image: image };
         dispatch({
           type: FETCH_OTHER_PROFILE,
-          payload: fetchProfileCopy, // l'array del profilo ottenuto
+          payload: fetchProfile, // l'array del profilo ottenuto
           // questo per invocare il reducer senza incertezze, in modo da svincolarlo da possibilità di fallimento!
         });
         console.log("dati fetch", fetchProfile);
