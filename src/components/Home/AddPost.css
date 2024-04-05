@@ -1,0 +1,111 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 8px;
+  outline: none;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* MODAL POST */
+.post_imgProfile {
+  width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post_imgProfile img {
+  height: 56px;
+
+}
+
+.modal-dialog {
+  max-width: 744px;
+  margin: 0;
+  margin-inline: auto;
+
+}
+
+.modal-content {
+  top: 30px;
+}
+
+.post-icons {
+  background-color: rgb(225, 225, 225);
+  border-radius: 50%;
+  overflow: hidden;
+  height: 56px;
+  width: 56px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 3px;
+}
+
+.post-icons svg {
+  fill: rgb(87, 85, 85)
+}
+
+.btn_clock {
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+
+.btn_clock:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.btn_clock svg {
+  fill: rgb(84, 84, 84);
+}
