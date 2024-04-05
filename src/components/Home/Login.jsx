@@ -42,7 +42,7 @@ const Login = () => {
     <Container>
       <Row>
         <Col xs={12} md={5}>
-          <h1 className="mt-2 ms-3">
+          <h1 className="mt-2 ms-3 fw-light" style={{ color: "#B24020" }}>
             Ti diamo il benvenuto <br /> nella tua community professionale
           </h1>
 
