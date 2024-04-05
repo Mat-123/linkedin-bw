@@ -11,6 +11,7 @@ function AllExperiences() {
   const [experiences, setExperiences] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [showModalAdd, setShowModalAdd] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +38,8 @@ function AllExperiences() {
     fetchData();
   }, [userId]);
 
-  const handleOpenModal = () => {
-    setShowModal(true);
+  const handleOpenModalAdd = () => {
+    setShowModalAdd(true);
   };
 
   const handleEditExperience = (experience) => {
@@ -47,7 +48,7 @@ function AllExperiences() {
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    setShowModalAdd(false);
     setSelectedExperience(null);
   };
 
@@ -96,7 +97,7 @@ function AllExperiences() {
             fill="currentColor"
             className="bi bi-plus-lg"
             viewBox="0 0 16 16"
-            onClick={handleOpenModal}
+            onClick={handleOpenModalAdd}
           >
             <path
               fillRule="evenodd"
@@ -162,7 +163,7 @@ function AllExperiences() {
             />
           )}
         </div>
-        <AddExperiences userId={userId} show={showModal} handleClose={handleCloseModal} />
+        <AddExperiences userId={userId} show={showModalAdd} handleClose={handleCloseModal} />
       </Card.Body>
     </Card>
   );
