@@ -42,6 +42,12 @@ export const getOtherProfile = (parametro) => {
     let url = "https://striveschool-api.herokuapp.com/api/profile/";
     let userdId = parametro;
     let urlCompleta = url + userdId;
+    console.log('parametro', parametro)
+    console.log('url completa', urlCompleta)
+    if(userdId === undefined){
+      urlCompleta = url
+      console.log('url', urlCompleta)
+    }
     fetch(urlCompleta, {
       method: "GET",
       headers: {
