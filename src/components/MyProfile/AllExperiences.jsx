@@ -116,17 +116,22 @@ function AllExperiences() {
                     className="m-1 h-100 border-start-0 border-end-0 border-top-0 rounded-0"
                   >
                     <div className="d-flex justify-content-between">
-                      <div>
-                        <h6>{experience.role}</h6>
-                        <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
-                        <Card.Text>
-                          <span>Data inizio: {new Date(experience.startDate).toLocaleDateString()}</span>
-                          <br />
-                          <span>
-                            Data fine:{" "}
-                            {experience.endDate ? new Date(experience.endDate).toLocaleDateString() : "Presente"}
-                          </span>
-                        </Card.Text>
+                      <div className="d-flex flex-row">
+                        <div>
+                          <img src={experience.image} alt="" style={{ width: "80px" }} className="me-2" />
+                        </div>
+                        <div>
+                          <h6>{experience.role}</h6>
+                          <Card.Subtitle className="mb-2 text-muted">{experience.company}</Card.Subtitle>
+                          <Card.Text>
+                            <span>Data inizio: {new Date(experience.startDate).toLocaleDateString()}</span>
+                            <br />
+                            <span>
+                              Data fine:{" "}
+                              {experience.endDate ? new Date(experience.endDate).toLocaleDateString() : "Presente"}
+                            </span>
+                          </Card.Text>
+                        </div>
                       </div>
                       <div>
                         <svg

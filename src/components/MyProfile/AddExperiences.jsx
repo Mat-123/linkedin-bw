@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
-const MyModal = ({ show, handleClose, updateExperiences }) => {
+const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
   const [formData, setFormData] = useState({
     role: "",
     company: "",
@@ -9,6 +9,9 @@ const MyModal = ({ show, handleClose, updateExperiences }) => {
     endDate: "",
     description: "",
   });
+
+  const [expId, setExpId] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +24,7 @@ const MyModal = ({ show, handleClose, updateExperiences }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/:userId/experiences`, {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
         method: "POST",
         headers: {
           Authorization:
@@ -30,6 +33,40 @@ const MyModal = ({ show, handleClose, updateExperiences }) => {
         },
         body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        const data = await response.json();
+        setExpId(data._id); // Set expId after successful experience creation
+        uploadImage(); // Call function to upload image after setting expId
+      } else {
+        console.error("Errore durante l'invio dei dati");
+      }
+    } catch (error) {
+      console.error("Errore durante la richiesta:", error);
+    }
+  };
+
+  const uploadImage = async () => {
+    try {
+      if (!expId) {
+        console.error("expId non valido");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("experience", imageFile);
+
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjBlYzVmYjEzZGYwYTAwMTk0OWY1OGIiLCJpYXQiOjE3MTIyNDQyMTksImV4cCI6MTcxMzQ1MzgxOX0.rFL8x1EdBXk5cXLx5V1jW6V2YTHy_0lLODn5-0_z7KE",
+          },
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         handleClose();
@@ -41,34 +78,18 @@ const MyModal = ({ show, handleClose, updateExperiences }) => {
           endDate: "",
           description: "",
         });
+        setImageFile(null); // Clear image file state after uploading
       } else {
-        console.error("Errore durante l'invio dei dati");
+        console.error("Errore durante l'invio dell'immagine");
       }
     } catch (error) {
-      console.error("Errore durante la richiesta:", error);
+      console.error("Errore durante il caricamento dell'immagine:", error);
     }
   };
 
-  const convertToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
-  const handleFileUpload = async (e) => {
+  const handleFileUpload = (e) => {
     const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setFormData({
-      ...formData,
-      image: base64,
-    });
+    setImageFile(file);
   };
 
   return (
