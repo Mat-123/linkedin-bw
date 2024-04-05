@@ -59,3 +59,8 @@ body {
   background-color: rgb(170, 170, 170);
   border: 1px solid gray;
 }
+
+#mytext {
+  width: 100%;
+  height: 100%;
+}
