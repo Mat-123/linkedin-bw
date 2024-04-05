@@ -133,7 +133,7 @@ const Post = (props) => {
             }
           }}
         >
-          <img src={likeRed} alt="" className="abs me-1" />
+          <img src={likeRed} alt="" className="abs heart" />
           <img src={likeBlu} alt="" className="like" />
         </div>
       </div>
