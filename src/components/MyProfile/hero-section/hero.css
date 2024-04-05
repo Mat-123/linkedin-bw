@@ -42,10 +42,10 @@
   padding: 3em; */
   border-radius: 50%;
   top: 5em;
- 
+
   /* forse da riaggiungere */
 }
-.profile img{
+.profile img {
   object-fit: cover;
 }
 
@@ -155,7 +155,8 @@
 }
 
 .filter-camera:hover {
-  filter: invert(23%) sepia(78%) saturate(6957%) hue-rotate(200deg) brightness(96%) contrast(93%);
+  filter: invert(23%) sepia(78%) saturate(6957%) hue-rotate(200deg)
+    brightness(96%) contrast(93%);
 }
 
 .intPen {
@@ -215,33 +216,44 @@
 
 @media screen and(max-width: 991px) {
   .personal {
-    top: 0em
+    top: 0em;
   }
-
 }
 
 /* post */
-.b-sopra{
+.b-sopra {
   border-top: solid 0.1em #e8e8e8;
 }
-.rel{
-  position: relative
+.rel {
+  position: relative;
 }
-.abs{
+.abs {
   position: absolute;
   right: 0.4em;
   top: 0.4em;
 }
 
 /* post */
-.b-sopra{
+.b-sopra {
   border-top: solid 0.1em #e8e8e8;
 }
-.rel{
-  position: relative
+.rel {
+  position: relative;
 }
-.abs{
+.abs {
   position: absolute;
   right: 0.4em;
   top: 0.4em;
+}
+/* commenti */
+
+.noBord {
+  border: none;
+}
+
+.bordComment {
+  background-color: #f2f2f2;
+  border-radius: 0.5em;
+  padding-inline-start: 1em;
+  border-top-left-radius: 0;
 }
