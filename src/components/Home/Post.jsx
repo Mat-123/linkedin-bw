@@ -65,8 +65,8 @@ const Post = (props) => {
         {/* <img src={props.infoPost.user.image} alt="" /> */}
         {/* like e num commenti */}
         <div className="rel">
-          <img src={likeRed} alt="" className="abs" />
-          <img src={likeBlu} alt="" />
+          <img src={likeRed} alt="" className="abs me-1" />
+          <img src={likeBlu} alt="" className="like" />
         </div>
       </div>
       <div className="d-flex  b-sopra">
