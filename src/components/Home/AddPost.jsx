@@ -12,7 +12,6 @@ const Card = () => {
     <div className="card">
       <div className="card-top">
         <div className="profile-icon">
-          {/* Icona circolare del profilo */}
           <img src={profile.image} alt="Profile Icon" />
         </div>
         <input type="text" placeholder="Avvia un post" className="rounded-pill" />
