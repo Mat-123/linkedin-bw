@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { useParams } from "react-router-dom";
 import ModifyExperience from "./ModifyExperience";
 import { Link } from "react-router-dom";
+import AddExperiences from "./AddExperiences";
 
 function AllExperiences() {
   const { userId } = useParams();
@@ -36,6 +37,10 @@ function AllExperiences() {
     fetchData();
   }, [userId]);
 
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
   const handleEditExperience = (experience) => {
     setSelectedExperience(experience);
     setShowModal(true);
@@ -64,24 +69,42 @@ function AllExperiences() {
   return (
     <Card style={{ width: "100%" }}>
       <Card.Body>
-        <div className="d-flex">
-          <Link to="/me" className="me-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              fill="black"
-              className="bi bi-arrow-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
-              />
-            </svg>
-          </Link>
-          <Card.Title className="fs-4">Tutte le Esperienze</Card.Title>
+        <div className="d-flex flex-row justify-content-between">
+          <div className="d-flex flex-row">
+            <Link to="/me" className="me-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="black"
+                className="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                />
+              </svg>
+            </Link>
+
+            <Card.Title className="fs-4">Tutte le Esperienze</Card.Title>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            className="bi bi-plus-lg"
+            viewBox="0 0 16 16"
+            onClick={handleOpenModal}
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"
+            />
+          </svg>
         </div>
+
         <div>
           <Row>
             {experiences && experiences.length > 0 ? (
@@ -139,6 +162,7 @@ function AllExperiences() {
             />
           )}
         </div>
+        <AddExperiences userId={userId} show={showModal} handleClose={handleCloseModal} />
       </Card.Body>
     </Card>
   );
