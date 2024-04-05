@@ -9,8 +9,11 @@ import likeBlu from "./icon post/like-blue.svg";
 import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import AddComment from "./AddComment";
 
 const Post = (props) => {
+  const [showAddComment, setShowAddComment] = useState(false);
+
   let data = props.infoPost.createdAt.slice(11);
   // console.log('data slice', data)
   // vera ora
@@ -18,6 +21,10 @@ const Post = (props) => {
   // console.log('ora slice', ora)
   let provadata = props.infoPost.createdAt.slice(0, 10);
   // console.log('vera data', provadata)
+
+  const handleCommentClick = () => {
+    setShowAddComment(!showAddComment);
+  };
   return (
     <div className="card my-2">
       <div className="card-top">
@@ -74,9 +81,10 @@ const Post = (props) => {
           <img src={like} alt="" style={{ height: "1em" }} className="px-2" />
           <p className="fs14 roboto-medium">Consiglia</p>
         </div>
-        <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
+        <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome" onClick={handleCommentClick}>
           <img src={comment} alt="" className="px-2" />
           <p className="fs14 roboto-medium">Commenta</p>
+          {setShowAddComment && <AddComment />}
         </div>
         <div className="d-flex  flex-wrap align-items-center px-2 py-2 nome">
           <img src={share} alt="" className="px-2" />
