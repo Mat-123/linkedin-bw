@@ -69,7 +69,7 @@ const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
       );
 
       if (response.ok) {
-        handleClose();
+        handleClose(); // Chiudi il modal dopo il caricamento dell'immagine
         setFormData({
           role: "",
           company: "",
@@ -77,7 +77,7 @@ const MyModal = ({ show, handleClose, updateExperiences, userId }) => {
           endDate: "",
           description: "",
         });
-        setImageFile(null); // Clear image file state after uploading
+        setImageFile(null);
       } else {
         console.error("Errore durante l'invio dell'immagine");
       }

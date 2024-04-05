@@ -30,7 +30,6 @@ function ModifyExperience({ experience, userId, expId, onSave, onDelete, onClose
       onClose();
     } catch (error) {
       console.error("Si è verificato un errore:", error);
-      // Gestisci l'errore in base alle tue esigenze (ad esempio, mostra un messaggio all'utente)
     }
   };
 
