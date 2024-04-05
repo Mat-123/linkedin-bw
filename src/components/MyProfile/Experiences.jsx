@@ -53,7 +53,7 @@ function Experiences() {
 
   return (
     <>
-      <Card style={{ width: "100%" }} className="p-0 whiteBck">
+      <Card style={{ width: "100%" }} className="p-0 whiteBck ">
         <Card.Body>
           <div className="d-flex justify-content-between">
             <Card.Title>Esperienze</Card.Title>

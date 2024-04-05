@@ -13,7 +13,7 @@ const FooterComponent = () => {
     <Container fluid>
       <div className="footer text-white mt-5">
         <Container>
-          <Row>
+          <Row className="fs12 roboto-medium">
             <Col xs={6} md={2}>
               <Nav className="flex-column ">
                 <NavLink className="titoloFooter ftText">Informazioni</NavLink>
@@ -50,8 +50,10 @@ const FooterComponent = () => {
                   <div className="d-flex align-items-start">
                     <QuestionCircleFill className="mt-1 me-1 colorIcon" />
                     <div className="d-flex flex-column">
-                      <span className="titoloFooter ftText">Domande?</span>
-                      <span className="sottotitoloFooter ftText">Visita il nostro Centro assistenza</span>
+                      <span className="titoloFooter ftText fs14">Domande?</span>
+                      <span className="sottotitoloFooter ftText roboto-regular">
+                        Visita il nostro Centro assistenza
+                      </span>
                     </div>
                   </div>
                 </NavLink>
@@ -59,8 +61,8 @@ const FooterComponent = () => {
                   <div className="d-flex align-items-start">
                     <GearFill className="mt-1 me-1 colorIcon" />
                     <div className="d-flex flex-column">
-                      <span className="titoloFooter ftText">Gestisci il tuo account e la tua privacy</span>
-                      <span className="sottotitoloFooter ftText">Vai alle impostazioni</span>
+                      <span className="titoloFooter ftText  fs14">Gestisci il tuo account e la tua privacy</span>
+                      <span className="sottotitoloFooter ftText roboto-regular">Vai alle impostazioni</span>
                     </div>
                   </div>
                 </NavLink>
@@ -68,8 +70,10 @@ const FooterComponent = () => {
                   <div className="d-flex align-items-start">
                     <ShieldShaded className="mt-1 me-1 colorIcon" />
                     <div className="d-flex flex-column">
-                      <span className="titoloFooter ftText">Trasparenza sui contenuti consigliati</span>
-                      <span className="sottotitoloFooter ftText">Scopri di più sui contenuti consigliati.</span>
+                      <span className="titoloFooter ftText  fs14">Trasparenza sui contenuti consigliati</span>
+                      <span className="sottotitoloFooter ftText roboto-regular">
+                        Scopri di più sui contenuti consigliati.
+                      </span>
                     </div>
                   </div>
                 </NavLink>
@@ -77,11 +81,11 @@ const FooterComponent = () => {
             </Col>
             <Col xs={12} md={3}>
               <div className="d-flex flex-column align-items-start">
-                <span className="sottotitoloFooter ftText">Seleziona lingua</span>
+                <span className="sottotitoloFooter ftText fs12">Seleziona lingua</span>
                 {/* <button className="btnFooter w-100">
                   Italiano (Italiano) <CaretDownFill />
                 </button> */}
-                <Dropdown className="btnFooter w-100">
+                <Dropdown className="btnFooter w-100 fs16">
                   {/* <Dropdown.Toggle variant="success" id="dropdown-basic"> */}
                   <Dropdown.Toggle id="persDrop">{azione ? azione : "seleziona lingua"}</Dropdown.Toggle>
                   <Dropdown.Menu>

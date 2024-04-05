@@ -3,7 +3,7 @@ import MiniCardCarousel from "./MiniCardCarousel";
 
 function Recommended() {
   return (
-    <Card className="whiteBck mb-1">
+    <Card className="whiteBck mb-2">
       <Card.Body>
         <Card.Title className="text-start">Consigliato per te</Card.Title>
         <Card.Subtitle className="mb-2 text-muted text-start">

@@ -45,3 +45,11 @@ h3 {
 .hidden-area {
   display: none;
 }
+
+.sfondo {
+  height: 56px;
+}
+
+.fw-semibold {
+  font-weight: 500;
+}
