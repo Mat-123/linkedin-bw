@@ -3,14 +3,15 @@ import logo from "../../assets/icons/linkedin.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/navbar.css";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Display } from "react-bootstrap-icons";
+import { Link, useNavigate } from "react-router-dom";
+// import { Display } from "react-bootstrap-icons";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/actions";
 
 function MyNav() {
   const user = useSelector((state) => state.user.available); // l'utente personale nel Redux Store
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -25,6 +26,10 @@ function MyNav() {
     console.log("dispatch fatto profilo personale");
     console.log("user", user);
   }, []);
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
 
   return (
     <header>
@@ -225,9 +230,10 @@ function MyNav() {
                     <Dropdown.Item eventKey="4">Post e attività</Dropdown.Item>
                     <Dropdown.Item eventKey="4">Account per la pubblicazione di offerte</Dropdown.Item>
                     <Dropdown.Divider />
-                    {/* <Link to={"/login"}> */}
-                    <Dropdown.Item eventKey="4">Esci</Dropdown.Item>
-                    {/* </Link> */}
+
+                    <Dropdown.Item eventKey="4" onClick={handleLogout}>
+                      Esci
+                    </Dropdown.Item>
                   </div>
                 </DropdownButton>
               </div>
