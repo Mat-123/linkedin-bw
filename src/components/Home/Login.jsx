@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import { Container, Row, Col, Alert, Navbar } from "react-bootstrap";
 import loginImg from "../../assets/img/hero_loginPage.svg";
 import { useNavigate } from "react-router-dom";
 import FooterComponent from "../MyProfile/FooterComponent";
+import logo from "../../assets/icons/linkedin.svg";
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -37,12 +38,11 @@ const Login = () => {
   };
 
   return (
-    // NAVBAR
-
     <Container>
+      <img src={logo} alt="" className="ms-2" />{" "}
       <Row>
         <Col xs={12} md={5}>
-          <h1 className="mt-2 ms-3 fw-light" style={{ color: "#B24020" }}>
+          <h1 className="mt-5 ms-3 fw-light" style={{ color: "#B24020" }}>
             Ti diamo il benvenuto <br /> nella tua community professionale
           </h1>
 
