@@ -10,7 +10,7 @@ const AddComment = () => {
         alt=""
         style={{ width: "46px", height: "46px", borderRadius: "50%", border: "1px solid #c1c1c1" }}
       />
-      <Form style={{ width: "320px" }}>
+      <Form style={{ width: "440px" }}>
         <Form.Group className="ms-2 mt-1" controlId="exampleForm.ControlInput1">
           <div style={{ position: "relative" }}>
             <Form.Control className="rounded-pill h-75" type="text" placeholder="Aggiungi un commento..." />
